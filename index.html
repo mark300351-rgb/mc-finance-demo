@@ -10,53 +10,32 @@
 <style>
 /* ============================================================
    MC 财务指挥中心 · Mono Contrast (方向 C)
-   单色 accent · 零边框 · 层叠阴影 · 水印编号
    ============================================================ */
 :root {
-  --bg-body: #f3f1ef;
-  --bg-sidebar: #34302b;
-  --bg-sidebar-hover: #423d37;
-  --bg-sidebar-active: #4a443d;
-  --bg-topbar: #ffffff;
-  --bg-card: #ffffff;
-  --bg-card-alt: #faf9f8;
-  --bg-inset: #f1efed;
-  --accent: #1a5c4a;
-  --accent-hover: #154c3d;
-  --accent-soft: #e7f1ec;
-  --accent-line: #cfe2d9;
-  --ink: #211f1c;
-  --ink-secondary: #57534e;
-  --ink-muted: #948f89;
-  --ink-faint: #c4bfb9;
-  --ink-on-dark: #f0ede9;
-  --ink-on-dark-dim: #a8a29a;
-  --ink-on-dark-faint: #6b655d;
-  --success: #1a5c4a;
-  --success-soft: #e7f1ec;
-  --warn: #9a6324;
-  --warn-soft: #f5ece0;
-  --danger: #97393a;
-  --danger-soft: #f5e6e6;
-  --hair: #e8e4e0;
-  --hair-strong: #ddd8d3;
-  --sp-2:2px; --sp-4:4px; --sp-8:8px; --sp-12:12px; --sp-16:16px; --sp-20:20px;
-  --sp-24:24px; --sp-32:32px; --sp-40:40px; --sp-48:48px; --sp-64:64px;
-  --r-sm:6px; --r-md:10px; --r-lg:14px; --r-pill:999px;
-  --shadow-1: 0 1px 2px rgba(33,31,28,.04), 0 1px 1px rgba(33,31,28,.03);
-  --shadow-2: 0 1px 2px rgba(33,31,28,.05), 0 4px 12px rgba(33,31,28,.05), 0 0 0 1px rgba(33,31,28,.02);
-  --shadow-3: 0 2px 4px rgba(33,31,28,.06), 0 12px 32px rgba(33,31,28,.10), 0 0 0 1px rgba(33,31,28,.03);
-  --shadow-accent: 0 4px 16px rgba(26,92,74,.18);
-  --font-mono: "DM Mono","JetBrains Mono","SF Mono",ui-monospace,monospace;
-  --font-body: "Noto Sans SC",-apple-system,"PingFang SC",system-ui,sans-serif;
-  --sidebar-w: 248px;
-  --topbar-h: 64px;
+  --bg-body:#f3f1ef; --bg-sidebar:#34302b; --bg-sidebar-hover:#423d37; --bg-sidebar-active:#4a443d;
+  --bg-topbar:#fff; --bg-card:#fff; --bg-card-alt:#faf9f8; --bg-inset:#f1efed;
+  --accent:#1a5c4a; --accent-hover:#154c3d; --accent-soft:#e7f1ec; --accent-line:#cfe2d9;
+  --ink:#211f1c; --ink-secondary:#57534e; --ink-muted:#948f89; --ink-faint:#c4bfb9;
+  --ink-on-dark:#f0ede9; --ink-on-dark-dim:#a8a29a; --ink-on-dark-faint:#6b655d;
+  --success:#1a5c4a; --success-soft:#e7f1ec;
+  --warn:#9a6324; --warn-soft:#f5ece0;
+  --danger:#97393a; --danger-soft:#f5e6e6;
+  --hair:#e8e4e0; --hair-strong:#ddd8d3;
+  --sp-2:2px;--sp-4:4px;--sp-8:8px;--sp-12:12px;--sp-16:16px;--sp-20:20px;
+  --sp-24:24px;--sp-32:32px;--sp-40:40px;--sp-48:48px;--sp-64:64px;
+  --r-sm:6px;--r-md:10px;--r-lg:14px;--r-pill:999px;
+  --shadow-1:0 1px 2px rgba(33,31,28,.04),0 1px 1px rgba(33,31,28,.03);
+  --shadow-2:0 1px 2px rgba(33,31,28,.05),0 4px 12px rgba(33,31,28,.05),0 0 0 1px rgba(33,31,28,.02);
+  --shadow-3:0 2px 4px rgba(33,31,28,.06),0 12px 32px rgba(33,31,28,.10),0 0 0 1px rgba(33,31,28,.03);
+  --shadow-accent:0 4px 16px rgba(26,92,74,.18);
+  --font-mono:"DM Mono","JetBrains Mono","SF Mono",ui-monospace,monospace;
+  --font-body:"Noto Sans SC",-apple-system,"PingFang SC",system-ui,sans-serif;
+  --sidebar-w:248px; --topbar-h:64px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{font-family:var(--font-body);background:var(--bg-body);color:var(--ink);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
 .mono{font-family:var(--font-mono);font-feature-settings:"tnum" 1}
-.num{font-family:var(--font-mono);font-feature-settings:"tnum" 1;letter-spacing:-0.01em}
 ::selection{background:var(--accent-soft);color:var(--accent)}
 
 /* LOGIN */
@@ -67,72 +46,80 @@ body{font-family:var(--font-body);background:var(--bg-body);color:var(--ink);fon
 .login-watermark{position:absolute;top:-18px;right:8px;font-family:var(--font-mono);font-size:92px;font-weight:500;color:var(--ink);opacity:.04;line-height:1;user-select:none}
 .login-brand{display:flex;align-items:center;gap:var(--sp-12);margin-bottom:var(--sp-32)}
 .login-logo{width:40px;height:40px;border-radius:var(--r-sm);background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-weight:500;font-size:17px;box-shadow:var(--shadow-accent)}
-.login-brand-text strong{display:block;font-size:15px;font-weight:600;letter-spacing:.01em}
+.login-brand-text strong{display:block;font-size:15px;font-weight:600}
 .login-brand-text span{display:block;font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);letter-spacing:.04em}
 .field{margin-bottom:var(--sp-16)}
 .field label{display:block;font-family:var(--font-mono);font-size:11px;color:var(--ink-secondary);letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--sp-8)}
-.field input{width:100%;height:44px;padding:0 var(--sp-16);border:1px solid var(--hair-strong);border-radius:var(--r-md);background:var(--bg-card-alt);color:var(--ink);font-family:var(--font-body);font-size:14px;transition:border-color .15s,box-shadow .15s,background .15s}
-.field input:focus{outline:none;border-color:var(--accent);background:var(--bg-card);box-shadow:0 0 0 3px var(--accent-soft)}
-.btn-login{width:100%;height:46px;margin-top:var(--sp-8);background:var(--accent);color:#fff;border:none;border-radius:var(--r-md);font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:background .15s,transform .08s,box-shadow .15s;box-shadow:var(--shadow-accent)}
+.field input{width:100%;height:44px;padding:0 var(--sp-16);border:1px solid var(--hair-strong);border-radius:var(--r-md);background:var(--bg-card-alt);color:var(--ink);font-family:var(--font-body);font-size:14px;transition:border-color .15s,box-shadow .15s}
+.field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.btn-login{width:100%;height:46px;margin-top:var(--sp-8);background:var(--accent);color:#fff;border:none;border-radius:var(--r-md);font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:.04em;cursor:pointer;box-shadow:var(--shadow-accent);transition:background .15s}
 .btn-login:hover{background:var(--accent-hover)}
-.btn-login:active{transform:translateY(1px)}
-.login-hint{margin-top:var(--sp-20);text-align:center;font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);letter-spacing:.02em}
+.login-hint{margin-top:var(--sp-20);text-align:center;font-family:var(--font-mono);font-size:11px;color:var(--ink-muted)}
 
 /* APP SHELL */
 #app{display:flex;height:100vh;overflow:hidden}
 #app.hidden{display:none}
-
-/* Sidebar */
 .sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--bg-sidebar);color:var(--ink-on-dark);display:flex;flex-direction:column;height:100%}
 .sidebar-head{display:flex;align-items:center;gap:var(--sp-12);padding:var(--sp-20) var(--sp-20) var(--sp-16)}
 .sidebar-logo{width:34px;height:34px;border-radius:var(--r-sm);flex-shrink:0;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-weight:500;font-size:14px}
-.sidebar-title strong{display:block;font-size:13.5px;font-weight:600;color:var(--ink-on-dark);letter-spacing:.01em}
+.sidebar-title strong{display:block;font-size:13.5px;font-weight:600;color:var(--ink-on-dark)}
 .sidebar-title span{display:block;font-family:var(--font-mono);font-size:10px;color:var(--ink-on-dark-faint);letter-spacing:.08em;margin-top:1px}
 .nav{flex:1;overflow-y:auto;padding:var(--sp-8) var(--sp-12) var(--sp-24)}
 .nav::-webkit-scrollbar{width:6px}
 .nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:3px}
-.nav-l1{margin-bottom:var(--sp-2)}
+.nav-l1{margin-bottom:2px}
 .nav-l1-head{display:flex;align-items:center;gap:var(--sp-12);padding:var(--sp-12);border-radius:var(--r-md);cursor:pointer;user-select:none;transition:background .12s}
 .nav-l1-head:hover{background:var(--bg-sidebar-hover)}
 .nav-l1-num{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--accent);flex-shrink:0;width:18px}
 .nav-l1-label{flex:1;font-size:13.5px;font-weight:500;color:var(--ink-on-dark)}
-.nav-caret{width:14px;height:14px;flex-shrink:0;color:var(--ink-on-dark-faint);transition:transform .18s ease}
+.nav-caret{width:14px;height:14px;flex-shrink:0;color:var(--ink-on-dark-faint);transition:transform .18s}
 .nav-l1.open .nav-caret{transform:rotate(90deg)}
-.nav-l1-body{display:none;padding:var(--sp-4) 0 var(--sp-8)}
+.nav-l1-body{display:none;padding:4px 0 8px}
 .nav-l1.open>.nav-l1-body{display:block}
-.nav-l2-head{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-12) var(--sp-8) var(--sp-24);margin:1px var(--sp-4);border-radius:var(--r-sm);cursor:pointer;user-select:none;transition:background .12s,color .12s;font-size:12.5px;color:var(--ink-on-dark-dim);border-left:2px solid transparent}
+.nav-l2-head{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-12) var(--sp-8) var(--sp-24);margin:1px var(--sp-4);border-radius:var(--r-sm);cursor:pointer;transition:background .12s,color .12s;font-size:12.5px;color:var(--ink-on-dark-dim);border-left:2px solid transparent}
 .nav-l2-head:hover{background:var(--bg-sidebar-hover);color:var(--ink-on-dark)}
-.nav-l2-code{font-family:var(--font-mono);font-size:11px;color:var(--ink-on-dark-faint)}
 .nav-l2-head.active{background:var(--bg-sidebar-active);color:var(--ink-on-dark);border-left-color:var(--accent)}
+.nav-l2-code{font-family:var(--font-mono);font-size:11px;color:var(--ink-on-dark-faint)}
+.nav-l3{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-12) var(--sp-8) 40px;margin:1px var(--sp-4);border-radius:var(--r-sm);cursor:pointer;transition:background .12s,color .12s;font-size:12px;color:var(--ink-on-dark-dim);border-left:2px solid transparent}
+.nav-l3:hover{background:var(--bg-sidebar-hover);color:var(--ink-on-dark)}
+.nav-l3.active{background:var(--bg-sidebar-active);color:var(--ink-on-dark);border-left-color:var(--accent)}
+.nav-l3-idx{font-family:var(--font-mono);font-size:10.5px;width:16px;height:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:4px;background:rgba(255,255,255,.06);color:var(--ink-on-dark-dim)}
+.nav-l3.active .nav-l3-idx{background:var(--accent);color:#fff}
+.nav-l3-label{flex:1}
+.nav-l2-body{display:none;padding:2px 0 4px}
+.nav-l2.open>.nav-l2-body{display:block}
+.nav-l2-head .nav-caret{width:12px;height:12px}
+.nav-l2.open .nav-caret{transform:rotate(90deg)}
 
-/* Main */
+/* MAIN */
 .main{flex:1;display:flex;flex-direction:column;min-width:0;height:100%}
 .topbar{height:var(--topbar-h);flex-shrink:0;background:var(--bg-topbar);display:flex;align-items:center;gap:var(--sp-16);padding:0 var(--sp-32);box-shadow:0 1px 0 var(--hair),var(--shadow-1);z-index:5}
+.btn-back{display:none;align-items:center;gap:4px;height:32px;padding:0 var(--sp-12);background:var(--bg-inset);border:none;border-radius:var(--r-sm);color:var(--ink-secondary);font-size:12.5px;cursor:pointer;transition:background .12s,color .12s}
+.btn-back.show{display:inline-flex}
+.btn-back:hover{background:var(--accent-soft);color:var(--accent)}
 .breadcrumb{display:flex;align-items:center;gap:var(--sp-8);flex:1;min-width:0}
 .crumb{font-size:13px;color:var(--ink-muted);white-space:nowrap}
 .crumb.root{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
 .crumb.current{color:var(--ink);font-weight:600}
 .crumb-sep{color:var(--ink-faint);font-size:11px}
-.clock{font-family:var(--font-mono);font-size:12px;color:var(--ink-secondary);letter-spacing:.02em;white-space:nowrap}
-.user-pill{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-4) var(--sp-8) var(--sp-4) var(--sp-4);border-radius:var(--r-pill);cursor:pointer;transition:background .12s}
+.clock{font-family:var(--font-mono);font-size:12px;color:var(--ink-secondary);white-space:nowrap}
+.user-pill{display:flex;align-items:center;gap:var(--sp-8);padding:4px 8px 4px 4px;border-radius:var(--r-pill);cursor:pointer;transition:background .12s}
 .user-pill:hover{background:var(--bg-inset)}
-.avatar{width:32px;height:32px;border-radius:50%;flex-shrink:0;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:500}
+.avatar{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:500}
 .user-meta strong{display:block;font-size:12.5px;font-weight:600}
 .user-meta span{display:block;font-size:10.5px;color:var(--ink-muted)}
 
-/* Content */
+/* CONTENT */
 .content{flex:1;overflow-y:auto;padding:var(--sp-32) var(--sp-40) var(--sp-48)}
 .content::-webkit-scrollbar{width:12px}
 .content::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:6px;border:3px solid var(--bg-body)}
-.content-inner{max-width:1120px;margin:0 auto}
+.content-inner{max-width:1080px;margin:0 auto}
 @keyframes fadeUp{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}
 .page{animation:fadeUp .3s ease both}
-
-/* Page head */
-.page-head{margin-bottom:var(--sp-24)}
+.page-head{margin-bottom:var(--sp-32)}
 .page-eyebrow{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--sp-8)}
 .page-title{font-size:26px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
-.page-desc{font-size:13.5px;color:var(--ink-secondary);margin-top:var(--sp-8)}
+.page-desc{font-size:13.5px;color:var(--ink-secondary);margin-top:var(--sp-8);max-width:640px}
 
 /* CARD */
 .card{background:var(--bg-card);border-radius:var(--r-lg);box-shadow:var(--shadow-2);padding:var(--sp-24)}
@@ -141,23 +128,7 @@ body{font-family:var(--font-body);background:var(--bg-body);color:var(--ink);fon
 .card-title{font-size:15px;font-weight:600;letter-spacing:-.005em}
 .card-sub{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);letter-spacing:.03em}
 
-/* TIME FILTER */
-.time-filter-row{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-16);flex-wrap:wrap;margin-bottom:var(--sp-24)}
-.time-tabs{display:flex;gap:0;background:var(--bg-card);box-shadow:var(--shadow-1);border-radius:var(--r-md);overflow:hidden}
-.time-tab{height:34px;padding:0 var(--sp-20);border:none;background:none;font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--ink-muted);cursor:pointer;transition:background .12s,color .12s;white-space:nowrap}
-.time-tab:hover{background:var(--bg-card-alt);color:var(--ink)}
-.time-tab.active{background:var(--accent);color:#fff;font-weight:500}
-.custom-dates{display:flex;align-items:center;gap:var(--sp-8)}
-.custom-dates input[type=date]{height:34px;padding:0 var(--sp-12);border:1px solid var(--hair-strong);border-radius:var(--r-sm);background:var(--bg-card);color:var(--ink);font-family:var(--font-mono);font-size:12px;cursor:pointer}
-.custom-dates input[type=date]:focus{outline:none;border-color:var(--accent)}
-.custom-label{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted)}
-.topbar-actions{display:flex;gap:var(--sp-8)}
-.btn-sm{height:34px;padding:0 var(--sp-16);border:1px solid var(--hair-strong);border-radius:var(--r-sm);background:var(--bg-card);color:var(--ink-secondary);font-family:var(--font-body);font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:var(--sp-8);transition:background .12s,color .12s}
-.btn-sm:hover{background:var(--bg-inset);color:var(--ink)}
-.btn-sm.primary{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:var(--shadow-accent)}
-.btn-sm.primary:hover{background:var(--accent-hover)}
-
-/* KPI GRID */
+/* KPI */
 .kpi-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:var(--sp-20);margin-bottom:var(--sp-24)}
 .kpi{position:relative;background:var(--bg-card);border-radius:var(--r-lg);box-shadow:var(--shadow-2);padding:var(--sp-24);overflow:hidden}
 .kpi.hero{grid-row:span 2;background:var(--accent);color:#fff;box-shadow:var(--shadow-accent),var(--shadow-2);display:flex;flex-direction:column;justify-content:space-between}
@@ -170,27 +141,12 @@ body{font-family:var(--font-body);background:var(--bg-body);color:var(--ink);fon
 .kpi-watermark{position:absolute;right:-6px;bottom:-22px;font-family:var(--font-mono);font-size:92px;font-weight:500;color:var(--ink);opacity:.03;line-height:1;user-select:none;pointer-events:none}
 .kpi-label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-muted);text-transform:uppercase;margin-bottom:var(--sp-12)}
 .kpi-value{font-family:var(--font-mono);font-size:clamp(20px,2vw,26px);font-weight:500;line-height:1.05;letter-spacing:-.02em;white-space:nowrap}
-.kpi-unit{display:block;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-muted);margin:var(--sp-4) 0 0}
+.kpi-unit{display:block;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-muted);margin:4px 0 0}
 .kpi-foot{display:flex;align-items:center;gap:var(--sp-8);margin-top:var(--sp-16);padding-top:var(--sp-12);border-top:1px solid var(--hair);font-size:12px;color:var(--ink-secondary)}
 .delta{font-family:var(--font-mono);font-size:11.5px;font-weight:500;padding:2px var(--sp-8);border-radius:var(--r-pill)}
 .delta.up{background:var(--success-soft);color:var(--success)}
 .delta.down{background:var(--danger-soft);color:var(--danger)}
 .delta.flat{background:var(--bg-inset);color:var(--ink-secondary)}
-
-/* CURRENCY GRID */
-.ccy-section{margin-bottom:var(--sp-24)}
-.ccy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--sp-12)}
-.ccy-card{background:var(--bg-card-alt);border-radius:var(--r-md);box-shadow:var(--shadow-1);padding:var(--sp-16);border:1px solid var(--hair)}
-.ccy-top{display:flex;align-items:center;gap:var(--sp-8);margin-bottom:var(--sp-8)}
-.ccy-icon{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:600}
-.ccy-sym{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--ink)}
-.ccy-full{font-family:var(--font-mono);font-size:10px;color:var(--ink-faint);margin-top:1px}
-.ccy-amt{font-family:var(--font-mono);font-size:16px;font-weight:500;color:var(--ink);letter-spacing:-.02em;line-height:1.2}
-.ccy-usd{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);margin-top:2px}
-.ccy-chg{font-family:var(--font-mono);font-size:11px;font-weight:500;margin-top:var(--sp-4)}
-.ccy-chg.up{color:var(--success)}
-.ccy-chg.down{color:var(--danger)}
-.ccy-chg.flat{color:var(--ink-muted)}
 
 /* TABLE */
 .table-wrap{overflow-x:auto;margin:0 calc(-1*var(--sp-24))}
@@ -203,75 +159,137 @@ tbody td:first-child{padding-left:var(--sp-24)}
 tbody td:last-child{padding-right:var(--sp-24)}
 tbody tr:last-child td{border-bottom:none}
 tbody tr:hover{background:var(--bg-card-alt)}
-td.strong{color:var(--ink);font-weight:600}
-td.code{font-family:var(--font-mono);font-size:12px;color:var(--ink-secondary)}
+td.strong{color:var(--ink);font-weight:500}
+td.code{font-family:var(--font-mono);font-size:12px}
 td.amt{font-family:var(--font-mono);font-size:13px;font-weight:500;text-align:right;letter-spacing:-.01em}
+td.amt.pos{color:var(--success)}
+td.amt.neg{color:var(--danger)}
 th.r,td.r{text-align:right}
-.amt.pos{color:var(--success)}
-.amt.neg{color:var(--danger)}
-.amt.muted{color:var(--ink-muted)}
-.fee-total td{font-weight:700;color:var(--ink);border-top:2px solid var(--hair-strong);background:var(--bg-card-alt)}
-
-/* TAG / BADGE */
-.tag{display:inline-flex;align-items:center;gap:var(--sp-4);font-family:var(--font-mono);font-size:11px;font-weight:500;padding:3px var(--sp-8);border-radius:var(--r-pill);white-space:nowrap}
+.ccy{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-muted)}
+.tag{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:11px;font-weight:500;padding:3px var(--sp-8);border-radius:var(--r-pill);white-space:nowrap}
 .tag::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
 .tag.done{background:var(--success-soft);color:var(--success)}
 .tag.pending{background:var(--warn-soft);color:var(--warn)}
 .tag.alert{background:var(--danger-soft);color:var(--danger)}
 .tag.neutral{background:var(--bg-inset);color:var(--ink-secondary)}
+.tag.info{background:rgba(37,99,168,.08);color:#2563a8}
 
-/* PROGRESS */
-.progress-wrap{margin-bottom:var(--sp-16)}
-.progress-meta{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--sp-8)}
-.progress-meta .label{font-family:var(--font-mono);font-size:11px;color:var(--ink-secondary);letter-spacing:.04em}
-.progress-meta .count{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted)}
-.progress-meta .count b{color:var(--accent);font-weight:500}
+/* SOP */
+.sop{position:relative;background:var(--bg-card);border-radius:var(--r-lg);box-shadow:var(--shadow-2);padding:var(--sp-40) var(--sp-40) var(--sp-32);overflow:hidden}
+.sop-watermark{position:absolute;top:-34px;right:var(--sp-24);font-family:var(--font-mono);font-size:200px;font-weight:500;color:var(--ink);opacity:.035;line-height:1;user-select:none;pointer-events:none}
+.sop-step-no{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:var(--sp-8)}
+.sop-title{font-size:24px;font-weight:600;letter-spacing:-.01em;margin-bottom:var(--sp-20)}
+.step-rail{display:flex;gap:var(--sp-8);margin-bottom:var(--sp-24);flex-wrap:wrap}
+.step-chip{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);border-radius:var(--r-pill);background:var(--bg-card);box-shadow:var(--shadow-1);cursor:pointer;font-size:12.5px;color:var(--ink-secondary);transition:all .14s;white-space:nowrap;border:none}
+.step-chip:hover{color:var(--ink);box-shadow:var(--shadow-2)}
+.step-chip-idx{font-family:var(--font-mono);font-size:11px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-inset);color:var(--ink-muted)}
+.step-chip.active{background:var(--accent);color:#fff;box-shadow:var(--shadow-accent)}
+.step-chip.active .step-chip-idx{background:rgba(255,255,255,.2);color:#fff}
+.step-chip.done .step-chip-idx{background:var(--success-soft);color:var(--success)}
+.progress-sop{margin-bottom:var(--sp-24)}
+.progress-meta-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--sp-8)}
+.progress-meta-label{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);letter-spacing:.04em;text-transform:uppercase}
+.progress-meta-count{font-family:var(--font-mono);font-size:12px;color:var(--ink-secondary)}
+.progress-meta-count b{color:var(--accent);font-weight:500}
 .progress-track{height:6px;background:var(--bg-inset);border-radius:var(--r-pill);overflow:hidden}
 .progress-fill{height:100%;background:var(--accent);border-radius:var(--r-pill);transition:width .7s cubic-bezier(.16,1,.3,1)}
-.progress-fill.warn{background:var(--warn)}
-.progress-fill.danger{background:var(--danger)}
+.checklist{display:flex;flex-direction:column;gap:4px}
+.check-item{display:flex;align-items:flex-start;gap:var(--sp-16);padding:var(--sp-16);border-radius:var(--r-md);transition:background .12s}
+.check-item:hover{background:var(--bg-card-alt)}
+.check-box{width:20px;height:20px;border-radius:var(--r-sm);flex-shrink:0;margin-top:1px;border:1.5px solid var(--hair-strong);background:var(--bg-card);display:flex;align-items:center;justify-content:center;transition:all .14s}
+.check-item.done .check-box{background:var(--accent);border-color:var(--accent);color:#fff}
+.check-body{flex:1}
+.check-title{display:block;font-size:14px;color:var(--ink);font-weight:500;line-height:1.5}
+.check-item.done .check-title{color:var(--ink-muted);text-decoration:line-through;text-decoration-color:var(--ink-faint)}
+.check-note{display:block;font-size:12.5px;color:var(--ink-muted);margin-top:2px;line-height:1.5}
+.check-num{font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);width:18px;flex-shrink:0;margin-top:3px;text-align:right}
 
-/* MINI BAR CHART */
-.mini-chart{display:flex;align-items:flex-end;gap:var(--sp-4);height:60px}
-.mini-bar{flex:1;border-radius:3px 3px 0 0;min-height:3px;transition:opacity .2s}
-.mini-bar:hover{opacity:.75}
+/* CHART */
+.chart-grid{display:flex;align-items:flex-end;gap:var(--sp-24);height:220px;padding:var(--sp-16) 0 0;border-bottom:1px solid var(--hair-strong)}
+.chart-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:var(--sp-12);height:100%;justify-content:flex-end}
+.bar-pair{display:flex;align-items:flex-end;gap:var(--sp-8);width:100%;height:100%;justify-content:center}
+.bar-wrap{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;width:34px}
+.bar-val{font-family:var(--font-mono);font-size:11px;color:var(--ink-secondary);margin-bottom:4px;white-space:nowrap}
+.bar{width:100%;border-radius:4px 4px 0 0;min-height:4px;transition:height .6s cubic-bezier(.16,1,.3,1)}
+.bar.in{background:var(--accent)}
+.bar.out{background:var(--ink-faint)}
+.chart-x{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-muted)}
+.chart-legend{display:flex;gap:var(--sp-24);margin-top:var(--sp-20);justify-content:center}
+.legend-item{display:flex;align-items:center;gap:var(--sp-8);font-size:12px;color:var(--ink-secondary)}
+.legend-dot{width:10px;height:10px;border-radius:3px}
+.legend-dot.in{background:var(--accent)}
+.legend-dot.out{background:var(--ink-faint)}
+
+/* ROLE */
+.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-16);margin-bottom:var(--sp-24)}
+.role-card{position:relative;background:var(--bg-card);border-radius:var(--r-md);box-shadow:var(--shadow-2);padding:var(--sp-20);overflow:hidden}
+.role-card-top{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-12);margin-bottom:var(--sp-12)}
+.role-name{font-size:14.5px;font-weight:600}
+.role-count{font-family:var(--font-mono);font-size:11px;color:var(--accent);background:var(--accent-soft);padding:2px var(--sp-8);border-radius:var(--r-pill)}
+.role-desc{font-size:12.5px;color:var(--ink-secondary);line-height:1.55}
+
+/* PERMISSION MATRIX */
+.matrix-wrap{overflow-x:auto;margin:0 calc(-1*var(--sp-24))}
+.matrix{width:100%;border-collapse:collapse;min-width:600px}
+.matrix th,.matrix td{padding:var(--sp-12) var(--sp-8);text-align:center;font-size:12px}
+.matrix th:first-child,.matrix td:first-child{text-align:left;padding-left:var(--sp-24);white-space:nowrap}
+.matrix thead th{font-family:var(--font-mono);font-size:10px;color:var(--ink-muted);background:var(--bg-card-alt);border-bottom:1px solid var(--hair-strong);writing-mode:vertical-rl;height:88px;vertical-align:bottom;padding-bottom:var(--sp-12)}
+.matrix thead th:first-child{writing-mode:horizontal-tb;vertical-align:bottom}
+.matrix tbody td{border-bottom:1px solid var(--hair);color:var(--ink-secondary)}
+.matrix tbody td:first-child{color:var(--ink);font-weight:500}
+.matrix tbody tr:hover{background:var(--bg-card-alt)}
+.matrix tbody tr:last-child td{border-bottom:none}
+.perm-yes{color:var(--accent);font-weight:700;font-size:15px}
+.perm-no{color:var(--ink-faint);font-size:15px}
+
+/* NEW: TIME FILTER */
+.time-filter-row{display:flex;align-items:center;justify-content:flex-end;gap:var(--sp-12);margin-bottom:var(--sp-24);flex-wrap:wrap}
+.time-tabs{display:flex;background:var(--bg-card);box-shadow:var(--shadow-1);border-radius:var(--r-md);overflow:hidden}
+.time-tab{height:34px;padding:0 var(--sp-20);border:none;background:none;font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--ink-muted);cursor:pointer;transition:background .12s,color .12s;white-space:nowrap}
+.time-tab:hover{background:var(--bg-card-alt);color:var(--ink)}
+.time-tab.active{background:var(--accent);color:#fff;font-weight:500}
+.custom-dates{display:flex;align-items:center;gap:var(--sp-8)}
+.custom-dates input[type=date]{height:34px;padding:0 var(--sp-12);border:1px solid var(--hair-strong);border-radius:var(--r-sm);background:var(--bg-card);color:var(--ink);font-family:var(--font-mono);font-size:12px;cursor:pointer}
+.custom-dates input[type=date]:focus{outline:none;border-color:var(--accent)}
+.custom-label{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted)}
+.btn-row{display:flex;gap:var(--sp-8)}
+.btn-sm{height:34px;padding:0 var(--sp-16);border:1px solid var(--hair-strong);border-radius:var(--r-sm);background:var(--bg-card);color:var(--ink-secondary);font-family:var(--font-body);font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:var(--sp-8);transition:background .12s,color .12s}
+.btn-sm:hover{background:var(--bg-inset);color:var(--ink)}
+.btn-sm.primary{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:var(--shadow-accent)}
+.btn-sm.primary:hover{background:var(--accent-hover)}
+
+/* NEW: CURRENCY CARDS */
+.ccy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:var(--sp-12);margin-bottom:var(--sp-24)}
+.ccy-card{background:var(--bg-card-alt);border-radius:var(--r-md);box-shadow:var(--shadow-1);padding:var(--sp-16);border:1px solid var(--hair)}
+.ccy-top{display:flex;align-items:center;gap:var(--sp-8);margin-bottom:var(--sp-8)}
+.ccy-icon{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:600}
+.ccy-sym{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--ink)}
+.ccy-full{font-family:var(--font-mono);font-size:9.5px;color:var(--ink-faint);margin-top:1px}
+.ccy-amt{font-family:var(--font-mono);font-size:15px;font-weight:500;color:var(--ink);letter-spacing:-.02em;line-height:1.2}
+.ccy-usd{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);margin-top:2px}
+.ccy-chg{font-family:var(--font-mono);font-size:11px;font-weight:500;margin-top:4px}
+.ccy-chg.up{color:var(--success)}.ccy-chg.down{color:var(--danger)}.ccy-chg.flat{color:var(--ink-muted)}
+
+/* NEW: MINI BAR */
+.mini-chart{display:flex;align-items:flex-end;gap:4px;height:56px;margin-top:var(--sp-16)}
+.mini-bar{flex:1;border-radius:3px 3px 0 0;min-height:3px}
 
 /* SECTION DIVIDER */
-.section-div{display:flex;align-items:center;gap:var(--sp-16);margin:var(--sp-32) 0 var(--sp-20)}
-.section-div-title{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);white-space:nowrap}
-.section-div-line{flex:1;height:1px;background:var(--hair)}
+.sec-div{display:flex;align-items:center;gap:var(--sp-16);margin:var(--sp-32) 0 var(--sp-20)}
+.sec-div-title{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);white-space:nowrap}
+.sec-div-line{flex:1;height:1px;background:var(--hair)}
 
-/* AI STAFF ROW */
-.ai-row{display:flex;align-items:center;gap:var(--sp-16);padding:var(--sp-16);border-radius:var(--r-md);transition:background .12s;cursor:default}
-.ai-row:hover{background:var(--bg-card-alt)}
-.ai-row+.ai-row{border-top:1px solid var(--hair)}
-.ai-avatar{width:36px;height:36px;border-radius:var(--r-sm);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-weight:600;font-size:14px;color:#fff}
-.ai-info{flex:1;min-width:0}
-.ai-role{font-size:13.5px;font-weight:600;color:var(--ink)}
-.ai-task{font-size:12px;color:var(--ink-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
-.ai-pct{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);flex-shrink:0}
-
-/* ALERT ROW */
-.alert-row{display:flex;align-items:flex-start;gap:var(--sp-12);padding:var(--sp-12) var(--sp-16);border-radius:var(--r-md)}
-.alert-row+.alert-row{border-top:1px solid var(--hair)}
-.alert-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px}
-.alert-dot.high{background:var(--danger)}
-.alert-dot.med{background:var(--warn)}
-.alert-body{flex:1;min-width:0}
-.alert-title{font-size:13px;font-weight:600;color:var(--ink)}
-.alert-desc{font-size:12px;color:var(--ink-secondary);margin-top:1px}
-
-/* GRID LAYOUTS */
+/* LAYOUTS */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-24);align-items:start}
 .three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--sp-24);align-items:start}
 @media(max-width:960px){.two-col,.three-col{grid-template-columns:1fr}}
-@media(max-width:860px){.kpi-grid{grid-template-columns:1fr 1fr}.kpi.hero{grid-row:span 1;grid-column:span 2}}
+@media(max-width:860px){.kpi-grid{grid-template-columns:1fr 1fr}.kpi.hero{grid-row:span 1;grid-column:span 2}.role-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.sidebar{position:fixed;left:0;top:0;bottom:0;z-index:50;transform:translateX(-100%);transition:transform .25s;box-shadow:var(--shadow-3)}.sidebar.open{transform:none}.content{padding:var(--sp-24) var(--sp-16) var(--sp-40)}.clock{display:none}}
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
+<!-- ===== LOGIN ===== -->
 <div id="login">
   <form class="login-card" id="login-form">
     <div class="login-watermark mono">00</div>
@@ -282,92 +300,97 @@ th.r,td.r{text-align:right}
         <span>FINANCIAL CONTROL</span>
       </div>
     </div>
-    <div class="field">
-      <label for="u">用户名</label>
-      <input type="text" id="u" placeholder="Mark Li" value="markli" autocomplete="username"/>
-    </div>
-    <div class="field">
-      <label for="p">密码</label>
-      <input type="password" id="p" placeholder="••••••••" value="demo" autocomplete="current-password"/>
-    </div>
+    <div class="field"><label for="u">用户名</label><input type="text" id="u" value="markli" placeholder="Mark Li" autocomplete="username"/></div>
+    <div class="field"><label for="p">密码</label><input type="password" id="p" value="demo" placeholder="••••••••" autocomplete="current-password"/></div>
     <button type="submit" class="btn-login">登 录</button>
     <div class="login-hint">输入任意内容即可进入演示</div>
   </form>
 </div>
 
-<!-- APP -->
+<!-- ===== APP ===== -->
 <div id="app" class="hidden">
   <aside class="sidebar">
     <div class="sidebar-head">
       <div class="sidebar-logo">MC</div>
-      <div class="sidebar-title">
-        <strong>财务指挥中心</strong>
-        <span>FINANCIAL CONTROL</span>
-      </div>
+      <div class="sidebar-title"><strong>财务指挥中心</strong><span>FINANCIAL CONTROL</span></div>
     </div>
     <nav class="nav">
+      <!-- 01 流程规范 -->
       <div class="nav-l1 open">
         <div class="nav-l1-head">
           <span class="nav-l1-num">01</span>
-          <span class="nav-l1-label">财务总览</span>
+          <span class="nav-l1-label">流程规范</span>
           <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
         <div class="nav-l1-body">
-          <div class="nav-l2-head active" data-view="overview">
-            <span class="nav-l2-code">1.1</span>
-            <span class="nav-l2-label">实时看板</span>
+          <div class="nav-l2 open">
+            <div class="nav-l2-head" data-view="sop-withdrawal">
+              <span class="nav-l2-code">1.1</span><span style="flex:1">出金审批</span>
+              <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="nav-l2-body">
+              <div class="nav-l3 active" data-view="sop-w-step1"><div class="nav-l3-idx">1</div><span class="nav-l3-label">收单核验</span></div>
+              <div class="nav-l3" data-view="sop-w-step2"><div class="nav-l3-idx">2</div><span class="nav-l3-label">合规审查</span></div>
+              <div class="nav-l3" data-view="sop-w-step3"><div class="nav-l3-idx">3</div><span class="nav-l3-label">资金划付</span></div>
+            </div>
           </div>
-          <div class="nav-l2-head" data-view="currency">
-            <span class="nav-l2-code">1.2</span>
-            <span class="nav-l2-label">多元币种</span>
+          <div class="nav-l2-head is-leaf" data-view="sop-recon">
+            <span class="nav-l2-code">1.2</span><span style="flex:1">入金对账</span>
           </div>
         </div>
       </div>
-      <div class="nav-l1">
+      <!-- 02 资金台账 -->
+      <div class="nav-l1 open">
         <div class="nav-l1-head">
           <span class="nav-l1-num">02</span>
-          <span class="nav-l1-label">盈利分析</span>
+          <span class="nav-l1-label">资金台账</span>
           <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
         <div class="nav-l1-body">
-          <div class="nav-l2-head" data-view="fee">
-            <span class="nav-l2-code">2.1</span>
-            <span class="nav-l2-label">手续费收入</span>
+          <div class="nav-l2-head is-leaf" data-view="ledger-overview">
+            <span class="nav-l2-code">2.1</span><span style="flex:1">数据概览</span>
           </div>
-          <div class="nav-l2-head" data-view="spread">
-            <span class="nav-l2-code">2.2</span>
-            <span class="nav-l2-label">点差收入</span>
+          <div class="nav-l2-head is-leaf" data-view="ledger-tx">
+            <span class="nav-l2-code">2.2</span><span style="flex:1">交易明细</span>
           </div>
         </div>
       </div>
-      <div class="nav-l1">
+      <!-- 03 财务看板 (NEW) -->
+      <div class="nav-l1 open">
         <div class="nav-l1-head">
           <span class="nav-l1-num">03</span>
-          <span class="nav-l1-label">资金健康</span>
+          <span class="nav-l1-label">财务看板</span>
           <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
         <div class="nav-l1-body">
-          <div class="nav-l2-head" data-view="health">
-            <span class="nav-l2-code">3.1</span>
-            <span class="nav-l2-label">用户余额 & 敞口</span>
-          </div>
+          <div class="nav-l2-head is-leaf" data-view="dashboard"><span class="nav-l2-code">3.1</span><span style="flex:1">实时总览</span></div>
+          <div class="nav-l2-head is-leaf" data-view="currency"><span class="nav-l2-code">3.2</span><span style="flex:1">多元币种</span></div>
+          <div class="nav-l2-head is-leaf" data-view="revenue"><span class="nav-l2-code">3.3</span><span style="flex:1">手续费 / 点差</span></div>
+          <div class="nav-l2-head is-leaf" data-view="health"><span class="nav-l2-code">3.4</span><span style="flex:1">资金健康</span></div>
         </div>
       </div>
+      <!-- 04 财务报表 -->
       <div class="nav-l1">
         <div class="nav-l1-head">
           <span class="nav-l1-num">04</span>
-          <span class="nav-l1-label">对账 & 告警</span>
+          <span class="nav-l1-label">财务报表</span>
           <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
         <div class="nav-l1-body">
-          <div class="nav-l2-head" data-view="recon">
-            <span class="nav-l2-code">4.1</span>
-            <span class="nav-l2-label">多渠道对账</span>
-          </div>
-          <div class="nav-l2-head" data-view="alerts">
-            <span class="nav-l2-code">4.2</span>
-            <span class="nav-l2-label">实时告警</span>
-          </div>
+          <div class="nav-l2-head is-leaf" data-view="report-monthly"><span class="nav-l2-code">4.1</span><span style="flex:1">月结报表</span></div>
+          <div class="nav-l2-head is-leaf" data-view="report-annual"><span class="nav-l2-code">4.2</span><span style="flex:1">年度汇总</span></div>
+        </div>
+      </div>
+      <!-- 05 系统管理 -->
+      <div class="nav-l1">
+        <div class="nav-l1-head">
+          <span class="nav-l1-num">05</span>
+          <span class="nav-l1-label">系统管理</span>
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="nav-l1-body">
+          <div class="nav-l2-head is-leaf" data-view="sys-roles"><span class="nav-l2-code">5.1</span><span style="flex:1">角色权限</span></div>
+          <div class="nav-l2-head is-leaf" data-view="sys-audit"><span class="nav-l2-code">5.2</span><span style="flex:1">操作日志</span></div>
         </div>
       </div>
     </nav>
@@ -375,475 +398,579 @@ th.r,td.r{text-align:right}
 
   <div class="main">
     <header class="topbar">
+      <button class="btn-back" id="btn-back">← 返回</button>
       <div class="breadcrumb">
         <span class="crumb root">MC 财务</span>
         <span class="crumb-sep">›</span>
-        <span class="crumb current" id="breadcrumb-current">实时看板</span>
+        <span class="crumb" id="bc-l1">流程规范</span>
+        <span class="crumb-sep" id="bc-sep2">›</span>
+        <span class="crumb current" id="bc-l2">收单核验</span>
       </div>
       <div class="clock" id="clock"></div>
       <div class="user-pill">
         <div class="avatar">ML</div>
-        <div class="user-meta">
-          <strong>Mark Li</strong>
-          <span>超级管理员</span>
-        </div>
+        <div class="user-meta"><strong>Mark Li</strong><span>超级管理员</span></div>
       </div>
     </header>
-
-    <main class="content">
-      <div class="content-inner" id="content-inner"></div>
-    </main>
+    <main class="content"><div class="content-inner page" id="content-inner"></div></main>
   </div>
 </div>
 
 <script>
 // ============================================================
-// MOCK DATA BY PERIOD
+// DATA
 // ============================================================
-const PERIOD_DATA = {
-  today: {
-    label: "今日",
-    totalAssets: 24836500, assetDelta: "up", assetDeltaText: "+0.4% 较昨日",
-    fees: 18340,      feeDelta: "up",   feeDeltaText: "+9.1% 较昨日",
-    spread: 34820,    spreadDelta: "up", spreadDeltaText: "+6.3% 较昨日",
-    pnl: 53160,       pnlDelta: "up",   pnlDeltaText: "利润率 17.8%",
-    userBalance: 18240300, exposure: 2140800, exposurePct: "11.7",
-    recon: 283, reconRate: "98.4", alerts: 7,
-    feeRows: [
-      { platform:"MT5（CFD）", sub:"XAUUSD/XAGUSD/US30", fees:8240, spread:18600, chg:"+11%" },
-      { platform:"MT4（CFD）", sub:"外汇 / 差价合约",    fees:5180, spread:9440,  chg:"+4%"  },
-      { platform:"Fireblocks", sub:"USDT/BTC/ETH 链上", fees:2100, spread:4280,  chg:"+18%" },
-      { platform:"OKX / Gate", sub:"现货 + 合约",       fees:1820, spread:2500,  chg:"新接入"},
-    ],
-    revBars: [55,60,70,65,80,72,88,100],
-    expBars: [10,10.5,11,11.2,11.5,11.4,11.7,11.7],
+const TX_DATA = [
+  {date:"06-01",id:"DEP-0601-001",type:"入金",amt:500000,ccy:"CNY",party:"ABC 科技有限公司",status:"已完成"},
+  {date:"06-01",id:"WDR-0601-001",type:"出金",amt:-200000,ccy:"CNY",party:"XYZ 投资控股",status:"已完成"},
+  {date:"06-02",id:"DEP-0602-001",type:"入金",amt:45000,ccy:"USD",party:"Global Trading Ltd",status:"已完成"},
+  {date:"06-02",id:"WDR-0602-001",type:"出金",amt:-850000,ccy:"CNY",party:"湾区资本集团",status:"已完成"},
+  {date:"06-03",id:"DEP-0603-001",type:"入金",amt:1200000,ccy:"CNY",party:"XX 资产管理",status:"已完成"},
+  {date:"06-03",id:"WDR-0603-001",type:"出金",amt:-32000,ccy:"USD",party:"Pacific Securities",status:"处理中"},
+  {date:"06-04",id:"DEP-0604-001",type:"入金",amt:280000,ccy:"HKD",party:"Bright Capital HK",status:"已完成"},
+  {date:"06-04",id:"WDR-0604-001",type:"出金",amt:-18000,ccy:"USDT",party:"Fireblocks vault-mc-1",status:"已完成"},
+  {date:"06-04",id:"DEP-0604-002",type:"入金",amt:95000,ccy:"USDC",party:"OKX LTY_AiAgent",status:"处理中"},
+  {date:"06-05",id:"WDR-0605-001",type:"出金",amt:-120000,ccy:"USDT",party:"用户 UID-88412",status:"待审批"},
+];
+
+const SOP_STEPS = {
+  "sop-w-step1":{num:"01",title:"收单核验",desc:"核验出金申请资料完整性及合规性",done:8,total:10,
+    items:[
+      {done:true, title:"核验申请人身份（KYC L1+）",note:"通过 BackOffice 查 KYC 等级，L1 以下自动拒绝"},
+      {done:true, title:"核对收款账户与白名单",note:"首次地址须人工确认，已验证地址自动通过"},
+      {done:true, title:"检查24h累计出金额度",note:"单用户 24h ≤ $50,000，超限转人工"},
+      {done:true, title:"AML/KYT 地址风险扫描",note:"黑名单地址自动拒绝，高风险转合规审查"},
+      {done:true, title:"匹配入金记录（资金来源）",note:"无入金记录账户禁止自动放行"},
+      {done:true, title:"MT5 / 持仓交叉核验",note:"出金额 ≤ 账户可用净值"},
+      {done:true, title:"生成核验报告，写入审计链",note:"不可篡改时间戳 + 操作员签名"},
+      {done:true, title:"通知合规审查员（异步）",note:"Telegram Bot 推送 + 系统内通知"},
+      {done:false,title:"财务总监二次确认（$10万以上）",note:"大额出金需额外审批层"},
+      {done:false,title:"记录完成时间戳，更新工单状态",note:"工单状态变为「已核验」"},
+    ]
   },
-  "7d": {
-    label: "近7天",
-    totalAssets: 24836500, assetDelta: "up", assetDeltaText: "+1.8% 较上周",
-    fees: 98720,      feeDelta: "up",   feeDeltaText: "+14.2% 较上周",
-    spread: 187340,   spreadDelta: "up", spreadDeltaText: "+9.5% 较上周",
-    pnl: 286060,      pnlDelta: "up",   pnlDeltaText: "利润率 17.4%",
-    userBalance: 18240300, exposure: 2140800, exposurePct: "11.7",
-    recon: 1204, reconRate: "97.8", alerts: 7,
-    feeRows: [
-      { platform:"MT5（CFD）", sub:"XAUUSD/XAGUSD/US30", fees:43500,  spread:98200,  chg:"+13%" },
-      { platform:"MT4（CFD）", sub:"外汇 / 差价合约",    fees:28400,  spread:52140,  chg:"+6%"  },
-      { platform:"Fireblocks", sub:"USDT/BTC/ETH 链上", fees:14200,  spread:23800,  chg:"+22%" },
-      { platform:"OKX / Gate", sub:"现货 + 合约",       fees:12620,  spread:13200,  chg:"新接入"},
-    ],
-    revBars: [50,65,70,75,80,85,90,100],
-    expBars: [9.5,10,10.5,11,11.2,11.5,11.6,11.7],
+  "sop-w-step2":{num:"02",title:"合规审查",desc:"合规团队复核风险项并作出放行决定",done:4,total:8,
+    items:[
+      {done:true, title:"调阅 KYT 全量扫描报告",note:"覆盖近30天地址关联图谱"},
+      {done:true, title:"人工抽查高风险交易对手",note:"风控评分 ≥ 60 触发人工复核"},
+      {done:true, title:"与客户经理核实大额背景",note:"$100,000 以上须有书面理由"},
+      {done:true, title:"填写合规意见书",note:"表单 COMP-F02，PDF 存档"},
+      {done:false,title:"提交葛总/主管审批",note:"工单流转至 L2 审批队列"},
+      {done:false,title:"记录审查时间，更新系统",note:"SLA 目标：4h 内完成"},
+      {done:false,title:"通知出纳 AI 执行划付",note:"合规通过后自动触发"},
+      {done:false,title:"存档本次合规审查文件",note:"保存 5 年，供监管查阅"},
+    ]
   },
-  month: {
-    label: "本月",
-    totalAssets: 24836500, assetDelta: "up", assetDeltaText: "+3.2% 较上月",
-    fees: 187340,     feeDelta: "up",   feeDeltaText: "+12.4% 较上期",
-    spread: 341820,   spreadDelta: "up", spreadDeltaText: "+8.1% 较上期",
-    pnl: 529160,      pnlDelta: "up",   pnlDeltaText: "利润率 18.3%",
-    userBalance: 18240300, exposure: 2140800, exposurePct: "11.7",
-    recon: 2341, reconRate: "98.2", alerts: 7,
-    feeRows: [
-      { platform:"MT5（CFD）", sub:"XAUUSD/XAGUSD/US30", fees:84200,  spread:188400, chg:"+9%"  },
-      { platform:"MT4（CFD）", sub:"外汇 / 差价合约",    fees:52400,  spread:96840,  chg:"+5%"  },
-      { platform:"Fireblocks", sub:"USDT/BTC/ETH 链上", fees:28600,  spread:42800,  chg:"+19%" },
-      { platform:"OKX / Gate", sub:"现货 + 合约",       fees:22140,  spread:13780,  chg:"新接入"},
-    ],
-    revBars: [42,55,60,72,65,82,80,100],
-    expBars: [8,9,10,11,11.5,11.2,11.6,11.7],
+  "sop-w-step3":{num:"03",title:"资金划付",desc:"出纳 AI 执行实际转账并完成对账",done:2,total:6,
+    items:[
+      {done:true, title:"确认 Fireblocks 热钱包余额充足",note:"热钱包占比 < 20% 触发补充预警"},
+      {done:true, title:"构造链上交易并广播",note:"GAS 费用自动从运营账户扣除"},
+      {done:false,title:"等待链上 3 个确认",note:"EVM 链 3 confirms / Tron 19 confirms"},
+      {done:false,title:"核对到账金额与工单金额",note:"差额 > $1 自动标记差异"},
+      {done:false,title:"更新用户账户余额（BackOffice）",note:"withdrawalStatus → SUCCESS"},
+      {done:false,title:"发送到账通知给用户",note:"邮件 + 站内信（如开启）"},
+    ]
   },
-  custom: {
-    label: "自定义",
-    totalAssets: 24836500, assetDelta: "up", assetDeltaText: "+2.1% 区间内",
-    fees: 124800,     feeDelta: "up",   feeDeltaText: "+10.8% 较基准",
-    spread: 218400,   spreadDelta: "up", spreadDeltaText: "+7.2% 较基准",
-    pnl: 343200,      pnlDelta: "up",   pnlDeltaText: "利润率 17.9%",
-    userBalance: 18240300, exposure: 2140800, exposurePct: "11.7",
-    recon: 1680, reconRate: "98.0", alerts: 7,
-    feeRows: [
-      { platform:"MT5（CFD）", sub:"XAUUSD/XAGUSD/US30", fees:56200, spread:121400, chg:"+8%"  },
-      { platform:"MT4（CFD）", sub:"外汇 / 差价合约",    fees:34800, spread:62400,  chg:"+4%"  },
-      { platform:"Fireblocks", sub:"USDT/BTC/ETH 链上", fees:19200, spread:23800,  chg:"+15%" },
-      { platform:"OKX / Gate", sub:"现货 + 合约",       fees:14600, spread:10800,  chg:"新接入"},
-    ],
-    revBars: [50,62,58,74,70,85,80,96],
-    expBars: [9,10,10.5,11,11.3,11.5,11.6,11.7],
+  "sop-recon":{num:"1.2",title:"入金对账",desc:"入金记录与银行/链上到账核对",done:6,total:8,
+    items:[
+      {done:true, title:"拉取当日银行流水（DBS/OCBC/BOC）",note:"每日 09:00 自动同步"},
+      {done:true, title:"自动匹配入金申请与流水",note:"AI 匹配率目标 ≥ 98%"},
+      {done:true, title:"Fireblocks 链上入账核对",note:"webhook 实时推送"},
+      {done:true, title:"MT5 入金记录比对",note:"5min 轮询"},
+      {done:true, title:"标记差异项，生成差异报告",note:"差异 > $500 升级告警"},
+      {done:true, title:"人工复核差异项",note:"SLA 4h 内处理"},
+      {done:false,title:"差异项关闭或升级",note:"确认或升级葛总"},
+      {done:false,title:"日终生成对账汇总",note:"自动推送财务总览"},
+    ]
   },
 };
 
+const PERIOD_DATA = {
+  today:{label:"今日",totalAssets:24836500,fees:18340,spread:34820,pnl:53160,userBalance:18240300,exposure:2140800,exposurePct:"11.7",recon:283,reconRate:"98.4",alerts:7,
+    feeRows:[{p:"MT5（CFD）",s:"XAUUSD/XAGUSD",fees:8240,spread:18600,chg:"+11%"},{p:"MT4（CFD）",s:"外汇/差价合约",fees:5180,spread:9440,chg:"+4%"},{p:"Fireblocks",s:"USDT/BTC/ETH",fees:2100,spread:4280,chg:"+18%"},{p:"OKX/Gate",s:"现货+合约",fees:1820,spread:2500,chg:"新接入"}],
+    rev:[55,60,70,65,80,72,88,100],exp:[10,10.5,11,11.2,11.5,11.4,11.7,11.7]},
+  "7d":{label:"近7天",totalAssets:24836500,fees:98720,spread:187340,pnl:286060,userBalance:18240300,exposure:2140800,exposurePct:"11.7",recon:1204,reconRate:"97.8",alerts:7,
+    feeRows:[{p:"MT5（CFD）",s:"XAUUSD/XAGUSD",fees:43500,spread:98200,chg:"+13%"},{p:"MT4（CFD）",s:"外汇/差价合约",fees:28400,spread:52140,chg:"+6%"},{p:"Fireblocks",s:"USDT/BTC/ETH",fees:14200,spread:23800,chg:"+22%"},{p:"OKX/Gate",s:"现货+合约",fees:12620,spread:13200,chg:"新接入"}],
+    rev:[50,65,70,75,80,85,90,100],exp:[9.5,10,10.5,11,11.2,11.5,11.6,11.7]},
+  month:{label:"本月",totalAssets:24836500,fees:187340,spread:341820,pnl:529160,userBalance:18240300,exposure:2140800,exposurePct:"11.7",recon:2341,reconRate:"98.2",alerts:7,
+    feeRows:[{p:"MT5（CFD）",s:"XAUUSD/XAGUSD",fees:84200,spread:188400,chg:"+9%"},{p:"MT4（CFD）",s:"外汇/差价合约",fees:52400,spread:96840,chg:"+5%"},{p:"Fireblocks",s:"USDT/BTC/ETH",fees:28600,spread:42800,chg:"+19%"},{p:"OKX/Gate",s:"现货+合约",fees:22140,spread:13780,chg:"新接入"}],
+    rev:[42,55,60,72,65,82,80,100],exp:[8,9,10,11,11.5,11.2,11.6,11.7]},
+  custom:{label:"自定义",totalAssets:24836500,fees:124800,spread:218400,pnl:343200,userBalance:18240300,exposure:2140800,exposurePct:"11.7",recon:1680,reconRate:"98.0",alerts:7,
+    feeRows:[{p:"MT5（CFD）",s:"XAUUSD/XAGUSD",fees:56200,spread:121400,chg:"+8%"},{p:"MT4（CFD）",s:"外汇/差价合约",fees:34800,spread:62400,chg:"+4%"},{p:"Fireblocks",s:"USDT/BTC/ETH",fees:19200,spread:23800,chg:"+15%"},{p:"OKX/Gate",s:"现货+合约",fees:14600,spread:10800,chg:"新接入"}],
+    rev:[50,62,58,74,70,85,80,96],exp:[9,10,10.5,11,11.3,11.5,11.6,11.7]},
+};
+
 const CURRENCIES = [
-  { sym:"USDT", full:"Tether",         icon:"₮", bg:"#e7f1ec", fg:"#1a5c4a", amt:"8,142,800",  usd:"$8,142,800", pct:"33.0%", chg:"+0.01%", up:true  },
-  { sym:"USDC", full:"USD Coin",       icon:"◎", bg:"#e8f0f8", fg:"#2563a8", amt:"4,820,300",  usd:"$4,820,300", pct:"19.5%", chg:"±0.00%", up:null  },
-  { sym:"BTC",  full:"Bitcoin",        icon:"₿", bg:"#fdf3e7", fg:"#9a6324", amt:"28.42",      usd:"$2,841,200", pct:"11.5%", chg:"+1.84%", up:true  },
-  { sym:"ETH",  full:"Ethereum",       icon:"Ξ", bg:"#f3f0f8", fg:"#5b3fa0", amt:"412.8",      usd:"$1,561,840", pct:"6.3%",  chg:"-0.62%", up:false },
-  { sym:"USD",  full:"US Dollar",      icon:"$", bg:"#f1efed", fg:"#57534e", amt:"3,820,140",  usd:"$3,820,140", pct:"15.5%", chg:"—",      up:null  },
-  { sym:"EUR",  full:"Euro",           icon:"€", bg:"#f0f5ea", fg:"#3a6624", amt:"2,180,400",  usd:"$2,374,216", pct:"9.6%",  chg:"-0.32%", up:false },
-  { sym:"HKD",  full:"港元",           icon:"H", bg:"#f8eded", fg:"#7a3535", amt:"8,820,000",  usd:"$1,130,769", pct:"4.6%",  chg:"+0.03%", up:true  },
+  {sym:"USDT",full:"Tether",   icon:"₮",bg:"#e7f1ec",fg:"#1a5c4a",amt:"8,142,800",usd:"$8,142,800",pct:"33.0%",chg:"+0.01%",up:true},
+  {sym:"USDC",full:"USD Coin", icon:"◎",bg:"#e8f0f8",fg:"#1d4da0",amt:"4,820,300",usd:"$4,820,300",pct:"19.5%",chg:"±0.00%",up:null},
+  {sym:"BTC", full:"Bitcoin",  icon:"₿",bg:"#fdf3e7",fg:"#9a6324",amt:"28.42",    usd:"$2,841,200",pct:"11.5%",chg:"+1.84%",up:true},
+  {sym:"ETH", full:"Ethereum", icon:"Ξ",bg:"#f3f0f8",fg:"#5b3fa0",amt:"412.8",    usd:"$1,561,840",pct:"6.3%",chg:"-0.62%",up:false},
+  {sym:"USD", full:"US Dollar",icon:"$",bg:"#f1efed",fg:"#57534e",amt:"3,820,140",usd:"$3,820,140",pct:"15.5%",chg:"—",     up:null},
+  {sym:"EUR", full:"Euro",     icon:"€",bg:"#f0f5ea",fg:"#3a6624",amt:"2,180,400",usd:"$2,374,216",pct:"9.6%",chg:"-0.32%",up:false},
+  {sym:"HKD", full:"港元",     icon:"H",bg:"#f8eded",fg:"#7a3535",amt:"8,820,000",usd:"$1,130,769",pct:"4.6%",chg:"+0.03%",up:true},
 ];
 
-const RECON_CHANNELS = [
-  { name:"银行账户",   matched:341,  total:342,  cls:"" },
-  { name:"Fireblocks",matched:1203, total:1210, cls:"" },
-  { name:"MT5",       matched:487,  total:520,  cls:"warn" },
-  { name:"CEX 账户",  matched:310,  total:345,  cls:"warn" },
-  { name:"OKX/Gate",  matched:0,    total:0,    cls:"danger" },
+const CHART_DATA = {
+  months:["1月","2月","3月","4月","5月","6月"],
+  in: [2840,3210,2980,3650,4120,3870],
+  out:[1920,2140,1880,2460,2840,2710],
+};
+
+const REPORT_ITEMS = [
+  {label:"营业收入",value:"HK$ 8,240,000",note:"手续费 + 点差 + 利息"},
+  {label:"营业成本",value:"HK$ 3,180,000",note:"运营 + 人力 + 技术"},
+  {label:"毛利润",value:"HK$ 5,060,000",note:"毛利率 61.4%"},
+  {label:"管理费用",value:"HK$ 1,240,000",note:"管理层薪酬 + 法律合规"},
+  {label:"净利润",value:"HK$ 3,820,000",note:"净利润率 46.4%"},
 ];
 
 // ============================================================
-// UTILS
-// ============================================================
-const fmtUSD = n => "$" + n.toLocaleString("en-US");
-const fmtNum = n => n.toLocaleString("zh-CN");
-
-// ============================================================
-// TIME FILTER STATE
+// HELPERS
 // ============================================================
 let period = "month";
+const fmtUSD = n=>"$"+Math.abs(n).toLocaleString("en-US");
+const fmtAmt = n=>(n<0?"-":"+")+""+Math.abs(n).toLocaleString("zh-CN");
 
 function timeTabs() {
   return `<div class="time-filter-row">
-    <div></div>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-      <div class="time-tabs">
-        ${["today","7d","month","custom"].map(p => {
-          const labels = {today:"今日","7d":"近7天",month:"本月",custom:"自定义"};
-          return `<button class="time-tab${period===p?" active":""}" data-period="${p}">${labels[p]}</button>`;
-        }).join("")}
-      </div>
-      <div class="custom-dates" id="custom-dates" style="display:${period==="custom"?"flex":"none"}">
-        <span class="custom-label">从</span>
-        <input type="date" id="date-from" value="2026-06-01">
-        <span class="custom-label">至</span>
-        <input type="date" id="date-to" value="2026-06-05">
-      </div>
-      <div class="topbar-actions">
-        <button class="btn-sm" id="btn-refresh">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
-          刷新
-        </button>
-        <button class="btn-sm primary" onclick="window.print()">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          导出
-        </button>
-      </div>
+    <div class="time-tabs">${["today","7d","month","custom"].map(p=>{
+      const L={today:"今日","7d":"近7天",month:"本月",custom:"自定义"};
+      return `<button class="time-tab${period===p?" active":""}" data-period="${p}">${L[p]}</button>`;
+    }).join("")}</div>
+    <div class="custom-dates" id="cust-dates" style="display:${period==="custom"?"flex":"none"};">
+      <span class="custom-label">从</span>
+      <input type="date" id="date-from" value="2026-06-01">
+      <span class="custom-label">至</span>
+      <input type="date" id="date-to" value="2026-06-05">
+    </div>
+    <div class="btn-row">
+      <button class="btn-sm" id="btn-ref">↺ 刷新</button>
+      <button class="btn-sm primary" onclick="window.print()">↓ 导出</button>
     </div>
   </div>`;
 }
 
-// ============================================================
-// KPI GRID
-// ============================================================
-function kpiGrid(d) {
-  const tot = d.fees + d.spread;
-  return `<div class="kpi-grid">
-    <!-- HERO -->
-    <div class="kpi hero">
-      <div class="kpi-watermark">01</div>
-      <div>
-        <div class="kpi-label">账户总资产</div>
-        <div class="kpi-value">${fmtUSD(d.totalAssets)}</div>
-        <div class="kpi-unit">USD 等值 · 7 种币种</div>
-      </div>
-      <div class="kpi-foot">
-        <span class="delta up">${d.assetDeltaText}</span>
-        <span>实时换算</span>
-      </div>
-    </div>
-    <!-- 手续费 -->
-    <div class="kpi">
-      <div class="kpi-watermark">02</div>
-      <div class="kpi-label">手续费收入</div>
-      <div class="kpi-value">${fmtUSD(d.fees)}</div>
-      <div class="kpi-foot">
-        <span class="delta ${d.feeDelta}">${d.feeDeltaText}</span>
-      </div>
-    </div>
-    <!-- 点差 -->
-    <div class="kpi">
-      <div class="kpi-watermark">03</div>
-      <div class="kpi-label">点差收入（Spread）</div>
-      <div class="kpi-value">${fmtUSD(d.spread)}</div>
-      <div class="kpi-foot">
-        <span class="delta ${d.spreadDelta}">${d.spreadDeltaText}</span>
-      </div>
-    </div>
-    <!-- 用户余额 -->
-    <div class="kpi">
-      <div class="kpi-watermark">04</div>
-      <div class="kpi-label">用户总余额</div>
-      <div class="kpi-value">${fmtUSD(d.userBalance)}</div>
-      <div class="kpi-foot">
-        <span class="delta flat">+2.8% 活跃资金</span>
-      </div>
-    </div>
-    <!-- PnL -->
-    <div class="kpi">
-      <div class="kpi-watermark">05</div>
-      <div class="kpi-label">平台净盈亏（PnL）</div>
-      <div class="kpi-value">${fmtUSD(d.pnl)}</div>
-      <div class="kpi-foot">
-        <span class="delta up">${d.pnlDeltaText}</span>
-      </div>
-    </div>
-    <!-- 风险敞口 -->
-    <div class="kpi">
-      <div class="kpi-watermark">06</div>
-      <div class="kpi-label">平台净风险敞口</div>
-      <div class="kpi-value">${fmtUSD(d.exposure)}</div>
-      <div class="kpi-foot">
-        <span class="delta flat">占用户余额 ${d.exposurePct}%（阈值 &lt;20%）</span>
-      </div>
-    </div>
-  </div>`;
+function bindTimeTabs(refresh) {
+  document.querySelectorAll(".time-tab").forEach(b=>{
+    b.addEventListener("click",()=>{
+      period=b.dataset.period;
+      const cd=document.getElementById("cust-dates");
+      if(cd) cd.style.display=period==="custom"?"flex":"none";
+      refresh();
+    });
+  });
+  document.getElementById("btn-ref")?.addEventListener("click",refresh);
 }
 
+function miniBars(vals,maxV,color) {
+  const m=maxV||Math.max(...vals);
+  return vals.map((v,i)=>`<div class="mini-bar" style="height:${Math.max(4,(v/m*100)).toFixed(1)}%;background:${color};opacity:${(.3+i/vals.length*.7).toFixed(2)};"></div>`).join("");
+}
+
+function checkIcon(){return `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>`;}
+
 // ============================================================
-// CURRENCY SECTION
+// VIEW RENDERERS
 // ============================================================
-function currencySection() {
-  return `<div class="ccy-section">
-    <div class="section-div">
-      <span class="section-div-title">多元币种资产分布</span>
-      <div class="section-div-line"></div>
-      <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);white-space:nowrap;">USD 等值实时换算</span>
+function renderSOP(key) {
+  const s = SOP_STEPS[key];
+  if(!s) return "<div class='page-desc'>此步骤内容正在整理中。</div>";
+  const pct = Math.round(s.done/s.total*100);
+  return `
+  <div class="sop">
+    <div class="sop-watermark">${s.num}</div>
+    <div class="sop-step-no">步骤 ${s.num}</div>
+    <div class="sop-title">${s.title}</div>
+    <div class="progress-sop">
+      <div class="progress-meta-row">
+        <span class="progress-meta-label">完成进度</span>
+        <span class="progress-meta-count"><b>${s.done}</b> / ${s.total} 项完成</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
     </div>
-    <div class="ccy-grid">
-      ${CURRENCIES.map(c => `
-        <div class="ccy-card">
-          <div class="ccy-top">
-            <div class="ccy-icon" style="background:${c.bg};color:${c.fg};">${c.icon}</div>
-            <div>
-              <div class="ccy-sym">${c.sym}</div>
-              <div class="ccy-full">${c.full}</div>
-            </div>
+    <div class="checklist">
+      ${s.items.map((item,i)=>`
+        <div class="check-item ${item.done?"done":""}">
+          <div class="check-num">${String(i+1).padStart(2,"0")}</div>
+          <div class="check-box">${item.done?checkIcon():""}</div>
+          <div class="check-body">
+            <span class="check-title">${item.title}</span>
+            <span class="check-note">${item.note}</span>
           </div>
-          <div class="ccy-amt">${c.amt}</div>
-          <div class="ccy-usd">${c.usd} · ${c.pct}</div>
-          <div class="ccy-chg ${c.up===true?"up":c.up===false?"down":"flat"}">${c.up===true?"↑":c.up===false?"↓":"→"} ${c.chg}</div>
         </div>`).join("")}
     </div>
   </div>`;
 }
 
-// ============================================================
-// FEE TABLE
-// ============================================================
-function feeTable(d) {
-  const total_fee = d.feeRows.reduce((s,r)=>s+r.fees,0);
-  const total_spread = d.feeRows.reduce((s,r)=>s+r.spread,0);
-  const total_all = total_fee + total_spread;
-  return `<div class="card" style="margin-bottom:var(--sp-24)">
-    <div class="card-head">
-      <div>
-        <div class="card-title">手续费 + 点差收入明细</div>
-        <div class="card-sub">按平台拆分 · USD 计价 · ${PERIOD_DATA[period].label}</div>
-      </div>
+function renderLedgerOverview() {
+  const totalIn  = TX_DATA.filter(r=>r.type==="入金").reduce((s,r)=>s+r.amt,0);
+  const totalOut = TX_DATA.filter(r=>r.type==="出金").reduce((s,r)=>s+Math.abs(r.amt),0);
+  const net = totalIn - totalOut;
+  const pending = TX_DATA.filter(r=>r.status!=="已完成").length;
+  return `
+  <div class="kpi-grid">
+    <div class="kpi hero">
+      <div class="kpi-watermark">01</div>
+      <div><div class="kpi-label">本月净流入</div>
+      <div class="kpi-value">¥ ${net.toLocaleString("zh-CN")}</div>
+      <div class="kpi-unit">人民币 + USD 混合</div></div>
+      <div class="kpi-foot"><span class="delta up">+3.2% 较上月</span><span>2026年06月</span></div>
     </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>平台 / 渠道</th>
-          <th class="r">手续费收入</th>
-          <th class="r">点差收入</th>
-          <th class="r">合计</th>
-          <th class="r">占比</th>
-          <th class="r">环比</th>
-        </tr></thead>
-        <tbody>
-          ${d.feeRows.map(r => {
-            const t = r.fees + r.spread;
-            const pct = ((t/total_all)*100).toFixed(1)+"%";
-            const chgColor = r.chg.startsWith("+")?"pos":r.chg==="新接入"?"":"";
-            return `<tr>
-              <td><div class="strong">${r.platform}</div><div style="font-size:11px;color:var(--ink-muted);margin-top:1px;">${r.sub}</div></td>
-              <td class="amt pos">$${r.fees.toLocaleString()}</td>
-              <td class="amt" style="color:var(--warn);">$${r.spread.toLocaleString()}</td>
-              <td class="amt strong">$${t.toLocaleString()}</td>
-              <td class="r" style="font-family:var(--font-mono);font-size:12px;color:var(--ink-muted);">${pct}</td>
-              <td class="r"><span class="tag ${r.chg==="新接入"?"neutral":r.chg.startsWith("+")?"done":"pending"}">${r.chg}</span></td>
-            </tr>`;
-          }).join("")}
-        </tbody>
-        <tfoot><tr class="fee-total">
-          <td class="strong">合计</td>
-          <td class="amt strong" style="color:var(--success);">$${total_fee.toLocaleString()}</td>
-          <td class="amt strong" style="color:var(--warn);">$${total_spread.toLocaleString()}</td>
-          <td class="amt strong">$${total_all.toLocaleString()}</td>
-          <td class="r" style="font-family:var(--font-mono);font-size:12px;color:var(--ink-muted);">100%</td>
-          <td></td>
-        </tr></tfoot>
-      </table>
-    </div>
-  </div>`;
-}
-
-// ============================================================
-// MINI BARS
-// ============================================================
-function miniBars(values, maxVal, colorClass) {
-  const m = maxVal || Math.max(...values);
-  return values.map((v,i) => {
-    const h = Math.max(4, (v/m*100)).toFixed(1);
-    const opacity = 0.35 + (i/values.length)*0.65;
-    return `<div class="mini-bar" style="height:${h}%;background:${colorClass};opacity:${opacity};"></div>`;
-  }).join("");
-}
-
-// ============================================================
-// BOTTOM ROW: recon + AI + alerts
-// ============================================================
-function bottomRow(d) {
-  return `<div class="section-div">
-    <span class="section-div-title">运营状态</span>
-    <div class="section-div-line"></div>
+    <div class="kpi"><div class="kpi-watermark">02</div><div class="kpi-label">累计入金</div><div class="kpi-value">¥ ${totalIn.toLocaleString("zh-CN")}</div><div class="kpi-foot"><span class="delta up">较上月 +12%</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">03</div><div class="kpi-label">累计出金</div><div class="kpi-value">¥ ${totalOut.toLocaleString("zh-CN")}</div><div class="kpi-foot"><span class="delta flat">→ 正常区间</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">04</div><div class="kpi-label">待处理笔数</div><div class="kpi-value">${pending}</div><div class="kpi-foot"><span class="delta ${pending>0?"down":"up"}">${pending>0?"需处理":"全部清零"}</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">05</div><div class="kpi-label">笔均金额</div><div class="kpi-value">¥ ${Math.round((totalIn+totalOut)/TX_DATA.length).toLocaleString("zh-CN")}</div><div class="kpi-foot"><span class="delta flat">→ 共 ${TX_DATA.length} 笔</span></div></div>
   </div>
-  <div class="three-col">
-    <!-- AI STAFF -->
-    <div class="card">
-      <div class="card-head"><div class="card-title">AI 数字员工</div><span class="tag done">全员在线</span></div>
-      <div class="ai-row">
-        <div class="ai-avatar" style="background:var(--accent);">出</div>
-        <div class="ai-info">
-          <div class="ai-role">出纳 AI</div>
-          <div class="ai-task">正在处理：付款核验 #TX-2847</div>
-          <div class="progress-track" style="margin-top:6px;"><div class="progress-fill" style="width:78%"></div></div>
-        </div>
-        <div class="ai-pct">78%</div>
-      </div>
-      <div class="ai-row">
-        <div class="ai-avatar" style="background:#5b3fa0;">会</div>
-        <div class="ai-info">
-          <div class="ai-role">会计 AI</div>
-          <div class="ai-task">正在处理：月结分录 2026-05</div>
-          <div class="progress-track" style="margin-top:6px;"><div class="progress-fill" style="width:92%"></div></div>
-        </div>
-        <div class="ai-pct">92%</div>
-      </div>
-      <div class="ai-row">
-        <div class="ai-avatar" style="background:#7a3535;">审</div>
-        <div class="ai-info">
-          <div class="ai-role">审计 AI</div>
-          <div class="ai-task">正在扫描：异常交易模式检测</div>
-          <div class="progress-track" style="margin-top:6px;"><div class="progress-fill" style="width:45%"></div></div>
-        </div>
-        <div class="ai-pct">45%</div>
-      </div>
-    </div>
-    <!-- RECON -->
-    <div class="card">
-      <div class="card-head"><div class="card-title">对账进度</div><span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);">${d.reconRate}% 匹配率</span></div>
-      ${RECON_CHANNELS.map(ch => {
-        const pct = ch.total ? (ch.matched/ch.total*100).toFixed(0) : 0;
-        return `<div class="progress-wrap">
-          <div class="progress-meta">
-            <span class="label">${ch.name}</span>
-            <span class="count">${ch.total?`<b>${ch.matched}</b>/${ch.total}`:"等待充值"}</span>
+  <div class="card">
+    <div class="card-head"><div class="card-title">月度资金流动</div><div class="card-sub">入金 vs 出金 · 万元</div></div>
+    <div class="chart-grid">
+      ${CHART_DATA.months.map((m,i)=>{
+        const maxV=Math.max(...CHART_DATA.in,...CHART_DATA.out);
+        const ih=Math.round(CHART_DATA.in[i]/maxV*100);
+        const oh=Math.round(CHART_DATA.out[i]/maxV*100);
+        return `<div class="chart-col">
+          <div class="bar-pair">
+            <div class="bar-wrap"><div class="bar-val">${(CHART_DATA.in[i]/100).toFixed(0)}</div><div class="bar in" style="height:${ih}%"></div></div>
+            <div class="bar-wrap"><div class="bar-val">${(CHART_DATA.out[i]/100).toFixed(0)}</div><div class="bar out" style="height:${oh}%"></div></div>
           </div>
-          <div class="progress-track"><div class="progress-fill ${ch.cls}" style="width:${pct}%"></div></div>
+          <div class="chart-x">${m}</div>
         </div>`;
       }).join("")}
     </div>
-    <!-- ALERTS -->
-    <div class="card">
-      <div class="card-head"><div class="card-title">实时告警</div><span class="tag ${d.alerts>0?"alert":"done"}">${d.alerts} 条</span></div>
-      <div class="alert-row"><div class="alert-dot high"></div><div class="alert-body"><div class="alert-title">CEX 余额偏差 ±2.3%</div><div class="alert-desc">Binance 对账差异超阈值</div></div></div>
-      <div class="alert-row"><div class="alert-dot med"></div><div class="alert-body"><div class="alert-title">MT5 点差异常</div><div class="alert-desc">XAUUSD spread 3.2× 均值</div></div></div>
-      <div class="alert-row"><div class="alert-dot med"></div><div class="alert-body"><div class="alert-title">大额提现待审批</div><div class="alert-desc">USDT 120,000 · 5 笔待处理</div></div></div>
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-dot in"></div>入金</div>
+      <div class="legend-item"><div class="legend-dot out"></div>出金</div>
     </div>
   </div>`;
 }
 
-// ============================================================
-// CHARTS ROW
-// ============================================================
-function chartsRow(d) {
-  return `<div class="section-div">
-    <span class="section-div-title">趋势图表</span>
-    <div class="section-div-line"></div>
-  </div>
-  <div class="two-col" style="margin-bottom:var(--sp-24);">
-    <div class="card">
-      <div class="card-head"><div class="card-title">手续费 + 点差收入趋势</div><span class="tag done">↑ +10.5%</span></div>
-      <div class="mini-chart" id="bar-rev">${miniBars(d.revBars,100,"var(--accent)")}</div>
-    </div>
-    <div class="card">
-      <div class="card-head"><div class="card-title">风险敞口 / 用户余额比</div><span class="tag neutral">当前 ${d.exposurePct}%</span></div>
-      <div class="mini-chart" id="bar-exp">${miniBars(d.expBars,20,"var(--warn)")}</div>
-      <div style="font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);margin-top:8px;">安全阈值 &lt;20% · 当前 ${d.exposurePct}%</div>
-    </div>
+function renderLedgerTx() {
+  return `
+  <div class="card">
+    <div class="card-head"><div class="card-title">交易明细</div><div class="card-sub">最近 ${TX_DATA.length} 笔出入金记录</div></div>
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>日期</th><th>编号</th><th>类型</th><th class="r">金额</th><th>币种</th><th>对方</th><th>状态</th>
+      </tr></thead>
+      <tbody>
+        ${TX_DATA.map(r=>{
+          const isIn=r.type==="入金";
+          const sTag = r.status==="已完成"?"done":r.status==="处理中"?"pending":r.status==="待审批"?"alert":"neutral";
+          return `<tr>
+            <td class="code">${r.date}</td>
+            <td class="code" style="color:var(--ink-muted)">${r.id}</td>
+            <td><span class="tag ${isIn?"info":"neutral"}">${r.type}</span></td>
+            <td class="amt ${isIn?"pos":"neg"}">${fmtAmt(r.amt)}</td>
+            <td><span class="ccy">${r.ccy}</span></td>
+            <td class="strong">${r.party}</td>
+            <td><span class="tag ${sTag}">${r.status}</span></td>
+          </tr>`;
+        }).join("")}
+      </tbody>
+    </table></div>
   </div>`;
 }
 
-// ============================================================
-// RENDER
-// ============================================================
-function renderOverview() {
+function renderDashboard() {
   const d = PERIOD_DATA[period];
-  const el = document.getElementById("content-inner");
-  el.innerHTML = `<div class="page">
-    <div class="page-head">
-      <div class="page-eyebrow">1.1 · 实时看板</div>
-      <div class="page-title">财务总览 <span style="font-size:16px;font-weight:400;color:var(--ink-secondary);">· ${d.label}</span></div>
-      <div class="page-desc">加密 + CFD 平台 · 实时示例数据 · 最后更新 <span class="mono" id="last-ts"></span></div>
+  const tot = d.fees+d.spread;
+  return `
+  <div class="page-head">
+    <div class="page-eyebrow">3.1 · 实时总览</div>
+    <div class="page-title">财务总览 <span style="font-size:16px;font-weight:400;color:var(--ink-secondary);">· ${d.label}</span></div>
+    <div class="page-desc">加密 + CFD 平台 · 示例数据 · 最后更新 <span class="mono" id="last-ts"></span></div>
+  </div>
+  ${timeTabs()}
+  <div class="kpi-grid">
+    <div class="kpi hero"><div class="kpi-watermark">01</div>
+      <div><div class="kpi-label">账户总资产</div><div class="kpi-value">${fmtUSD(d.totalAssets)}</div><div class="kpi-unit">USD 等值 · 7 种币种</div></div>
+      <div class="kpi-foot"><span class="delta up">+3.2% 较上月</span><span>实时换算</span></div>
     </div>
-    ${timeTabs()}
-    ${kpiGrid(d)}
-    ${currencySection()}
-    ${feeTable(d)}
-    ${chartsRow(d)}
-    ${bottomRow(d)}
-    <div style="height:32px;"></div>
+    <div class="kpi"><div class="kpi-watermark">02</div><div class="kpi-label">手续费收入</div><div class="kpi-value">${fmtUSD(d.fees)}</div><div class="kpi-foot"><span class="delta up">${d.label}累计</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">03</div><div class="kpi-label">点差收入</div><div class="kpi-value">${fmtUSD(d.spread)}</div><div class="kpi-foot"><span class="delta up">${d.label}累计</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">04</div><div class="kpi-label">用户总余额</div><div class="kpi-value">${fmtUSD(d.userBalance)}</div><div class="kpi-foot"><span class="delta up">+2.8% 活跃资金</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">05</div><div class="kpi-label">平台净 PnL</div><div class="kpi-value">${fmtUSD(d.pnl)}</div><div class="kpi-foot"><span class="delta up">利润率 18.3%</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">06</div><div class="kpi-label">净风险敞口</div><div class="kpi-value">${fmtUSD(d.exposure)}</div><div class="kpi-foot"><span class="delta flat">占余额 ${d.exposurePct}% &lt;20%阈值</span></div></div>
+  </div>
+  <div class="two-col" style="margin-bottom:var(--sp-24)">
+    <div class="card"><div class="card-head"><div class="card-title">收入趋势</div><span class="tag done">↑ +10.5%</span></div>
+      <div class="mini-chart">${miniBars(d.rev,100,"var(--accent)")}</div></div>
+    <div class="card"><div class="card-head"><div class="card-title">风险敞口比</div><span class="tag neutral">${d.exposurePct}%</span></div>
+      <div class="mini-chart">${miniBars(d.exp,20,"var(--warn)")}</div>
+      <div style="font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);margin-top:8px;">安全阈值 &lt;20%</div></div>
   </div>`;
-  // 绑定时间 tab
-  document.querySelectorAll(".time-tab").forEach(btn => {
-    btn.addEventListener("click", () => {
-      period = btn.dataset.period;
-      const custom = document.getElementById("custom-dates");
-      if(custom) custom.style.display = period==="custom"?"flex":"none";
-      renderOverview();
-    });
-  });
-  document.getElementById("btn-refresh")?.addEventListener("click", renderOverview);
-  updateTs();
 }
 
-function updateTs() {
-  const el = document.getElementById("last-ts");
-  if(el) el.textContent = new Date().toLocaleTimeString("zh-CN",{hour12:false});
+function renderCurrency() {
+  return `
+  <div class="page-head"><div class="page-eyebrow">3.2 · 多元币种</div><div class="page-title">币种资产分布</div><div class="page-desc">USDT / USDC / BTC / ETH / USD / EUR / HKD · USD 等值实时换算</div></div>
+  <div class="ccy-grid">
+    ${CURRENCIES.map(c=>`
+      <div class="ccy-card">
+        <div class="ccy-top"><div class="ccy-icon" style="background:${c.bg};color:${c.fg};">${c.icon}</div>
+          <div><div class="ccy-sym">${c.sym}</div><div class="ccy-full">${c.full}</div></div>
+        </div>
+        <div class="ccy-amt">${c.amt}</div>
+        <div class="ccy-usd">${c.usd} · ${c.pct}</div>
+        <div class="ccy-chg ${c.up===true?"up":c.up===false?"down":"flat"}">${c.up===true?"↑":c.up===false?"↓":"→"} ${c.chg}</div>
+      </div>`).join("")}
+  </div>`;
+}
+
+function renderRevenue() {
+  const d = PERIOD_DATA[period];
+  const rows = d.feeRows;
+  const tf = rows.reduce((s,r)=>s+r.fees,0);
+  const ts = rows.reduce((s,r)=>s+r.spread,0);
+  const ta = tf+ts;
+  return `
+  <div class="page-head"><div class="page-eyebrow">3.3 · 盈利维度</div><div class="page-title">手续费 / 点差收入</div></div>
+  ${timeTabs()}
+  <div class="card">
+    <div class="card-head"><div class="card-title">收入明细</div><div class="card-sub">按平台拆分 · USD</div></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>平台</th><th class="r">手续费</th><th class="r">点差</th><th class="r">合计</th><th class="r">占比</th><th class="r">环比</th></tr></thead>
+      <tbody>
+        ${rows.map(r=>{const t=r.fees+r.spread;return `<tr>
+          <td class="strong">${r.p}<div style="font-size:11px;color:var(--ink-muted);">${r.s}</div></td>
+          <td class="amt pos">$${r.fees.toLocaleString()}</td>
+          <td class="amt" style="color:var(--warn);">$${r.spread.toLocaleString()}</td>
+          <td class="amt strong">$${t.toLocaleString()}</td>
+          <td class="r" style="font-family:var(--font-mono);font-size:12px;color:var(--ink-muted);">${((t/ta)*100).toFixed(1)}%</td>
+          <td class="r"><span class="tag ${r.chg==="新接入"?"info":r.chg.startsWith("+")?"done":"pending"}">${r.chg}</span></td>
+        </tr>`;}).join("")}
+      </tbody>
+      <tfoot><tr style="background:var(--bg-card-alt);">
+        <td class="strong">合计</td>
+        <td class="amt" style="color:var(--success);font-weight:700;">$${tf.toLocaleString()}</td>
+        <td class="amt" style="color:var(--warn);font-weight:700;">$${ts.toLocaleString()}</td>
+        <td class="amt strong">$${ta.toLocaleString()}</td>
+        <td class="r" style="font-family:var(--font-mono);font-size:12px;color:var(--ink-muted);">100%</td>
+        <td></td>
+      </tr></tfoot>
+    </table></div>
+  </div>`;
+}
+
+function renderHealth() {
+  const d = PERIOD_DATA[period];
+  return `
+  <div class="page-head"><div class="page-eyebrow">3.4 · 资金健康</div><div class="page-title">资金健康指标</div></div>
+  ${timeTabs()}
+  <div class="kpi-grid">
+    <div class="kpi hero"><div class="kpi-watermark">H1</div>
+      <div><div class="kpi-label">用户总余额</div><div class="kpi-value">${fmtUSD(d.userBalance)}</div><div class="kpi-unit">USD 等值</div></div>
+      <div class="kpi-foot"><span class="delta up">+2.8% 活跃资金增长</span></div>
+    </div>
+    <div class="kpi"><div class="kpi-watermark">H2</div><div class="kpi-label">平台净风险敞口</div><div class="kpi-value">${fmtUSD(d.exposure)}</div><div class="kpi-foot"><span class="delta flat">占余额 ${d.exposurePct}%（阈值 &lt;20%）</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">H3</div><div class="kpi-label">平台净 PnL</div><div class="kpi-value">${fmtUSD(d.pnl)}</div><div class="kpi-foot"><span class="delta up">利润率 18.3%</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">H4</div><div class="kpi-label">已对账笔数</div><div class="kpi-value">${d.recon.toLocaleString()}</div><div class="kpi-foot"><span class="delta flat">→ 对账率 ${d.reconRate}%</span></div></div>
+    <div class="kpi"><div class="kpi-watermark">H5</div><div class="kpi-label">待处理告警</div><div class="kpi-value">${d.alerts}</div><div class="kpi-foot"><span class="delta ${d.alerts>0?"down":"up"}">${d.alerts>0?"需关注":"全部清零"}</span></div></div>
+  </div>`;
+}
+
+function renderReportMonthly() {
+  return `
+  <div class="page-head"><div class="page-eyebrow">4.1 · 财务报表</div><div class="page-title">月结报表</div><div class="page-desc">2026年05月 · Magic Compass Group · 合并口径</div></div>
+  <div class="card">
+    <div class="card-head"><div class="card-title">损益摘要</div><div class="card-sub">港元 HKD</div></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>项目</th><th class="r">金额</th><th>说明</th></tr></thead>
+      <tbody>
+        ${REPORT_ITEMS.map(r=>`<tr><td class="strong">${r.label}</td><td class="amt ${r.label.includes("净")||r.label.includes("毛")?"pos":""}">${r.value}</td><td style="color:var(--ink-muted);font-size:12px;">${r.note}</td></tr>`).join("")}
+      </tbody>
+    </table></div>
+  </div>
+  <div class="card" style="margin-top:var(--sp-24)">
+    <div class="card-head"><div class="card-title">收支趋势（近6月）</div></div>
+    <div class="chart-grid">
+      ${CHART_DATA.months.map((m,i)=>{
+        const maxV=Math.max(...CHART_DATA.in,...CHART_DATA.out);
+        const ih=Math.round(CHART_DATA.in[i]/maxV*100);
+        const oh=Math.round(CHART_DATA.out[i]/maxV*100);
+        return `<div class="chart-col">
+          <div class="bar-pair">
+            <div class="bar-wrap"><div class="bar-val">${(CHART_DATA.in[i]/100).toFixed(0)}</div><div class="bar in" style="height:${ih}%"></div></div>
+            <div class="bar-wrap"><div class="bar-val">${(CHART_DATA.out[i]/100).toFixed(0)}</div><div class="bar out" style="height:${oh}%"></div></div>
+          </div><div class="chart-x">${m}</div></div>`;
+      }).join("")}
+    </div>
+    <div class="chart-legend"><div class="legend-item"><div class="legend-dot in"></div>收入</div><div class="legend-item"><div class="legend-dot out"></div>成本</div></div>
+  </div>`;
+}
+
+function renderRoles() {
+  const roles=[
+    {name:"超级管理员",count:"1人",desc:"全系统最高权限，可操作所有模块，含系统配置与用户管理。"},
+    {name:"财务总监",count:"2人",desc:"审批大额出金（>$10万），查看所有财务报表与审计日志。"},
+    {name:"会计",count:"3人",desc:"录入凭证、编制月结，查看资金台账与财务报表。"},
+    {name:"出纳",count:"4人",desc:"执行出入金操作，核验日常收支，不可修改系统配置。"},
+    {name:"合规审计",count:"2人",desc:"查看审计日志与合规报告，无法发起任何资金操作。"},
+    {name:"只读观察员",count:"3人",desc:"仅查看报表与总览，用于管理层汇报和外部审计配合。"},
+  ];
+  const perms=["流程规范","资金台账","财务看板","财务报表","系统管理","用户操作","大额审批","审计日志"];
+  const matrix=[
+    [1,1,1,1,1,1,1,1],
+    [1,1,1,1,0,1,1,1],
+    [1,1,1,1,0,0,0,1],
+    [1,1,0,0,0,1,0,1],
+    [1,0,1,1,0,0,0,1],
+    [0,1,1,1,0,0,0,0],
+  ];
+  return `
+  <div class="page-head"><div class="page-eyebrow">5.1 · 系统管理</div><div class="page-title">角色权限</div><div class="page-desc">6 个角色 · 8 个权限模块</div></div>
+  <div class="role-grid">
+    ${roles.map(r=>`<div class="role-card"><div class="role-card-top"><div class="role-name">${r.name}</div><span class="role-count">${r.count}</span></div><div class="role-desc">${r.desc}</div></div>`).join("")}
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-title">权限矩阵</div><div class="card-sub">● 有权限 · ○ 无权限</div></div>
+    <div class="matrix-wrap"><table class="matrix">
+      <thead><tr>
+        <th>角色 ╲ 模块</th>
+        ${perms.map(p=>`<th>${p}</th>`).join("")}
+      </tr></thead>
+      <tbody>
+        ${roles.map((r,i)=>`<tr><td>${r.name}</td>${matrix[i].map(v=>`<td class="${v?"perm-yes":"perm-no"}">${v?"●":"○"}</td>`).join("")}</tr>`).join("")}
+      </tbody>
+    </table></div>
+  </div>`;
+}
+
+function renderAuditLog() {
+  const logs=[
+    {time:"23:41:07",user:"Mark Li",action:"登录系统","module":"系统",ip:"192.168.1.45"},
+    {time:"23:38:02",user:"出纳 AI",action:"执行出金 WDR-0605-001","module":"资金台账",ip:"系统"},
+    {time:"23:12:44",user:"会计 AI",action:"完成月结分录 2026-05","module":"财务报表",ip:"系统"},
+    {time:"22:55:18",user:"葛总",action:"批准大额出金 $120,000","module":"审批队列",ip:"10.0.0.12"},
+    {time:"21:30:05",user:"审计 AI",action:"完成异常扫描，发现 3 条告警","module":"合规","ip":"系统"},
+    {time:"20:14:33",user:"Mark Li",action:"修改风控阈值 auto_pass_max→$10,000","module":"系统",ip:"192.168.1.45"},
+  ];
+  return `
+  <div class="page-head"><div class="page-eyebrow">5.2 · 系统管理</div><div class="page-title">操作日志</div><div class="page-desc">最近 ${logs.length} 条操作记录 · 不可篡改审计链</div></div>
+  <div class="card">
+    <div class="table-wrap"><table>
+      <thead><tr><th>时间</th><th>操作员</th><th>操作内容</th><th>模块</th><th>来源 IP</th></tr></thead>
+      <tbody>
+        ${logs.map(l=>`<tr>
+          <td class="code">${l.time}</td>
+          <td class="strong">${l.user}</td>
+          <td>${l.action}</td>
+          <td><span class="tag neutral">${l.module}</span></td>
+          <td class="code" style="color:var(--ink-muted)">${l.ip}</td>
+        </tr>`).join("")}
+      </tbody>
+    </table></div>
+  </div>`;
 }
 
 // ============================================================
-// NAV
+// ROUTING
+// ============================================================
+const VIEW_META = {
+  "sop-w-step1":["流程规范","收单核验"],
+  "sop-w-step2":["流程规范","合规审查"],
+  "sop-w-step3":["流程规范","资金划付"],
+  "sop-recon":  ["流程规范","入金对账"],
+  "ledger-overview":["资金台账","数据概览"],
+  "ledger-tx":      ["资金台账","交易明细"],
+  "dashboard":  ["财务看板","实时总览"],
+  "currency":   ["财务看板","多元币种"],
+  "revenue":    ["财务看板","手续费/点差"],
+  "health":     ["财务看板","资金健康"],
+  "report-monthly":["财务报表","月结报表"],
+  "report-annual": ["财务报表","年度汇总"],
+  "sys-roles":  ["系统管理","角色权限"],
+  "sys-audit":  ["系统管理","操作日志"],
+};
+
+function renderView(view) {
+  const ci = document.getElementById("content-inner");
+  ci.className = "content-inner page";
+  void ci.offsetWidth; // force reflow for animation
+  ci.className = "content-inner page";
+
+  const meta = VIEW_META[view]||["",""];
+  document.getElementById("bc-l1").textContent = meta[0];
+  document.getElementById("bc-l2").textContent = meta[1];
+
+  switch(view) {
+    case "sop-w-step1": case "sop-w-step2": case "sop-w-step3": case "sop-recon":
+      ci.innerHTML = `<div class="page-head"><div class="page-eyebrow">1.${view==="sop-recon"?"2 · 入金对账":"1 · 出金审批"}</div><div class="page-title">${meta[1]}</div></div>${renderSOPWithRail(view)}`;
+      break;
+    case "ledger-overview": ci.innerHTML=renderLedgerOverview(); break;
+    case "ledger-tx":       ci.innerHTML=renderLedgerTx(); break;
+    case "dashboard":
+      ci.innerHTML=renderDashboard();
+      bindTimeTabs(()=>renderView("dashboard"));
+      document.getElementById("last-ts").textContent=new Date().toLocaleTimeString("zh-CN",{hour12:false});
+      break;
+    case "currency":  ci.innerHTML=renderCurrency(); break;
+    case "revenue":
+      ci.innerHTML=renderRevenue();
+      bindTimeTabs(()=>renderView("revenue"));
+      break;
+    case "health":
+      ci.innerHTML=renderHealth();
+      bindTimeTabs(()=>renderView("health"));
+      break;
+    case "report-monthly": ci.innerHTML=renderReportMonthly(); break;
+    case "report-annual":  ci.innerHTML=`<div class="page-head"><div class="page-eyebrow">4.2</div><div class="page-title">年度汇总</div><div class="page-desc">内容整理中，敬请期待。</div></div>`; break;
+    case "sys-roles":  ci.innerHTML=renderRoles(); break;
+    case "sys-audit":  ci.innerHTML=renderAuditLog(); break;
+    default: ci.innerHTML=`<div class="page-head"><div class="page-title">${meta[1]||view}</div><div class="page-desc">此页面正在建设中。</div></div>`;
+  }
+}
+
+function renderSOPWithRail(activeView) {
+  const steps = [
+    {view:"sop-w-step1",label:"收单核验",done:true},
+    {view:"sop-w-step2",label:"合规审查",done:false},
+    {view:"sop-w-step3",label:"资金划付",done:false},
+  ];
+  const isRecon = activeView==="sop-recon";
+  if(isRecon) return renderSOP("sop-recon");
+  return `
+  <div class="step-rail">
+    ${steps.map((s,i)=>`<button class="step-chip${s.view===activeView?" active":s.done?" done":""}" data-view="${s.view}">
+      <span class="step-chip-idx">${s.done&&s.view!==activeView?checkIcon():i+1}</span>
+      ${s.label}
+    </button>`).join("")}
+  </div>
+  ${renderSOP(activeView)}`;
+}
+
+// ============================================================
+// NAV INIT
 // ============================================================
 function initNav() {
-  document.querySelectorAll(".nav-l1-head").forEach(h => {
-    h.addEventListener("click", () => {
-      h.closest(".nav-l1").classList.toggle("open");
+  document.querySelectorAll(".nav-l1-head").forEach(h=>{
+    h.addEventListener("click",()=>h.closest(".nav-l1").classList.toggle("open"));
+  });
+  document.querySelectorAll(".nav-l2-head[data-view]").forEach(link=>{
+    link.addEventListener("click",()=>{
+      document.querySelectorAll(".nav-l2-head,.nav-l3").forEach(el=>el.classList.remove("active"));
+      link.classList.add("active");
+      // open parent
+      link.closest(".nav-l1")?.classList.add("open");
+      renderView(link.dataset.view);
     });
   });
-  document.querySelectorAll(".nav-l2-head[data-view]").forEach(link => {
-    link.addEventListener("click", () => {
-      document.querySelectorAll(".nav-l2-head").forEach(l=>l.classList.remove("active"));
+  document.querySelectorAll(".nav-l3[data-view]").forEach(link=>{
+    link.addEventListener("click",()=>{
+      document.querySelectorAll(".nav-l2-head,.nav-l3").forEach(el=>el.classList.remove("active"));
       link.classList.add("active");
-      const view = link.dataset.view;
-      const labels = {overview:"实时看板",currency:"多元币种",fee:"手续费收入",spread:"点差收入",health:"资金健康",recon:"多渠道对账",alerts:"实时告警"};
-      document.getElementById("breadcrumb-current").textContent = labels[view]||view;
-      if(view==="overview") renderOverview();
-      else {
-        document.getElementById("content-inner").innerHTML = `<div class="page">
-          <div class="page-head">
-            <div class="page-eyebrow">${link.querySelector(".nav-l2-code").textContent} · ${labels[view]}</div>
-            <div class="page-title">${labels[view]}</div>
-            <div class="page-desc">此视图正在建设中，请从「实时看板」查看完整数据。</div>
-          </div>
-          ${timeTabs()}
-          ${view==="currency"?currencySection():feeTable(PERIOD_DATA[period])}
-        </div>`;
-        document.querySelectorAll(".time-tab").forEach(btn => {
-          btn.addEventListener("click",()=>{period=btn.dataset.period;document.querySelector(".nav-l2-head.active")?.click();});
-        });
-      }
+      link.closest(".nav-l1")?.classList.add("open");
+      link.closest(".nav-l2")?.classList.add("open");
+      renderView(link.dataset.view);
     });
+  });
+  // step rail clicks (delegated)
+  document.addEventListener("click",e=>{
+    const chip = e.target.closest(".step-chip[data-view]");
+    if(chip){
+      document.querySelectorAll(".nav-l3").forEach(el=>el.classList.remove("active"));
+      document.querySelector(`.nav-l3[data-view="${chip.dataset.view}"]`)?.classList.add("active");
+      renderView(chip.dataset.view);
+    }
   });
 }
 
@@ -851,23 +978,22 @@ function initNav() {
 // CLOCK
 // ============================================================
 function updateClock() {
-  const el = document.getElementById("clock");
+  const el=document.getElementById("clock");
   if(!el) return;
-  const now = new Date();
-  el.textContent = now.toLocaleDateString("zh-CN",{month:"2-digit",day:"2-digit"})+" "+now.toLocaleTimeString("zh-CN",{hour12:false});
+  const n=new Date();
+  el.textContent=`${n.getMonth()+1}/${n.getDate()} `+n.toLocaleTimeString("zh-CN",{hour12:false});
 }
 setInterval(updateClock,1000);
-setInterval(updateTs, 30000);
 
 // ============================================================
 // LOGIN
 // ============================================================
-document.getElementById("login-form").addEventListener("submit", e => {
+document.getElementById("login-form").addEventListener("submit",e=>{
   e.preventDefault();
   document.getElementById("login").classList.add("hidden");
   document.getElementById("app").classList.remove("hidden");
   initNav();
-  renderOverview();
+  renderView("sop-w-step1");
   updateClock();
 });
 </script>
